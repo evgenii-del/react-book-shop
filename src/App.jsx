@@ -1,11 +1,10 @@
 import React from 'react';
+import { Catalog } from './pages';
 
 function App() {
   return (
     <div className="App">
-      <h1>
-        React Book Shop
-      </h1>
+      <Catalog />
     </div>
   );
 }
