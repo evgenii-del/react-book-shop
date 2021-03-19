@@ -1,0 +1,134 @@
+.catalog {
+  max-width: 1280px;
+  width: 100%;
+  margin: 50px auto 0 auto;
+  padding: 35px 25px;
+  background-color: $white;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+
+  &__logo {
+    font-size: 2.5rem;
+  }
+
+  &__search {
+    max-width: 425px;
+    width: 100%;
+    background-color: white;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  &__search-image {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding-right: 10px;
+  }
+
+  &__nav-select {
+    display: grid;
+    grid-template-areas: "select";
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+  }
+
+  &__nav-select .select__inner {
+    appearance: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 8px 12px;
+    width: 100%;
+    border: 1px solid #efefef;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    z-index: 1;
+    outline: none;
+  }
+}
+
+.card {
+  max-width: calc(100% / 6);
+  width: 100%;
+  padding: 15px;
+
+  &__image {
+    width: 100%;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__btn {
+    padding: 3px 6px;
+    color: $white;
+    background-color: $black;
+    border: 1px solid $black;
+  }
+}
+
+.catalog__header {
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+
+  &-user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-user-image-container {
+    width: 30px;
+    height: 30px;
+  }
+
+  &-user-image {
+    border-radius: 50%;
+    width: 100%;
+    height: auto;
+    max-height: 30px;
+  }
+
+  &-cart {
+    margin-left: 30px;
+    width: 30px;
+    height: 30px;
+  }
+
+  &-btn {
+    margin-left: 30px;
+    padding: 10px 30px;
+    color: $white;
+    background-color: #393d46;
+    border: 1px solid #393d46;
+  }
+}
