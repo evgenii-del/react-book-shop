@@ -1,0 +1,30 @@
+.card {
+  max-width: calc(100% / 6 - 26px);
+  margin: 0 13px 45px;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  flex-direction: column;
+  text-decoration: none;
+  align-self: flex-start;
+
+  &__header {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__main {
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__main-description {
+    color: $black;
+
+    &:hover {
+      transition: .5s;
+      opacity: .5;
+    }
+  }
+}
