@@ -1,13 +1,30 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import { Catalog } from './pages';
-import { Header } from './components';
+import {Cart, Catalog, Detail, Login, NotFound} from './pages';
 
 function App() {
   return (
     <div className="wrapper">
-      <Header />
-      <Catalog />
+        <Router>
+            <Switch >
+                <Route exact path="/catalog">
+                    <Catalog/>
+                </Route>
+                <Route exact path="/catalog/:id">
+                    <Detail/>
+                </Route>
+                <Route exact path="/cart">
+                    <Cart/>
+                </Route>
+                <Route exact path="/login">
+                    <Login/>
+                </Route>
+                <Route path="*">
+                    <NotFound />
+                </Route>
+            </Switch>
+        </Router>
     </div>
   );
 }

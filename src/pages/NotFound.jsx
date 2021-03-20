@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 const NotFound = () => (
   <div className="not-found">
@@ -11,7 +12,7 @@ const NotFound = () => (
         ipsa natus obcaecati pariatur, quo rem sint sunt tenetur
         ullam vitae. Ab ad asperiores voluptatem?
       </p>
-      <button className="not-found__btn" type="button">Go To Homepage</button>
+      <Link to="/catalog" className="not-found__btn">Go To Homepage</Link>
     </div>
   </div>
 );
