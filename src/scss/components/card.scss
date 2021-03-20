@@ -19,12 +19,22 @@
     flex-direction: column;
   }
 
-  &__main-description {
-    color: $black;
+  &__main-price {
+    margin: 5px 0;
+  }
 
-    &:hover {
-      transition: .5s;
-      opacity: .5;
-    }
+  &__main-title {
+    font-size: 1rem;
+  }
+
+  &__main-price,
+  &__main-title,
+  &__main-author {
+    color: $black;
+  }
+
+  &:hover {
+    transition: .5s;
+    opacity: .75;
   }
 }

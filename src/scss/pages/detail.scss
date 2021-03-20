@@ -1,0 +1,58 @@
+.main {
+  padding: 15px 60px;
+  background-color: #ffffff;
+
+  &__title {
+    margin-bottom: 15px;
+  }
+
+  &__detail {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__detail-title {
+    font-size: 3rem;
+    font-weight: 900;
+  }
+
+  &__detail-author {
+    position: relative;
+    margin: 15px 0;
+    font-size: 1.5rem;
+    padding-left: 15px;
+
+    &:before {
+      position: absolute;
+      content: '';
+      width: 9px;
+      height: 2px;
+      background-color: $black;
+      left: 0;
+      top: 13px;
+    }
+  }
+
+  &__detail-price {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #797979;
+  }
+
+  &__detail-description {
+    font-size: 1.5rem;
+  }
+
+  &__detail-image,
+  &__detail-info {
+    max-width: 50%;
+  }
+
+  &__detail-info {
+    padding: 0 50px;
+  }
+
+  &__detail-image img {
+    max-width: 100%;
+  }
+}

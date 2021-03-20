@@ -1,14 +1,22 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import logoutPng from '../assets/images/logout.png';
 import cartPng from '../assets/images/cart.png';
+import { logout } from '../store/actions';
 
 const Header = () => {
+  const dispatch = useDispatch();
   const [search, setSearch] = useState('');
 
   const handleChangeSearch = ({ target }) => {
     setSearch(target.value);
+  };
+
+  const handleLogout = () => {
+    dispatch(logout());
+    return <Redirect to="/login" />;
   };
 
   return (
@@ -21,10 +29,10 @@ const Header = () => {
           <input className="header__form-input" type="text" value={search} onChange={handleChangeSearch} />
           <button className="header__form-btn" type="button">Search</button>
         </form>
-        <Link to="/cart" className="header__cart">
+        <div className="header__cart" onClick={handleLogout} aria-hidden>
           <img className="header__cart-image" src={logoutPng} alt="logout" />
           <span className="header__cart-label">Logout</span>
-        </Link>
+        </div>
         <Link to="/cart" className="header__exit">
           <img className="header__exit-image" src={cartPng} alt="cart" />
           <span className="header__exit-label">Cart</span>

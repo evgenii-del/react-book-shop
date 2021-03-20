@@ -17,42 +17,6 @@
     flex-wrap: wrap;
   }
 
-  &__detail {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &__detail-title {
-    line-height: 37px;
-    font-size: 3rem;
-    font-weight: 900;
-    margin-bottom: 15px;
-  }
-
-  &__detail-price {
-    font-size: 28px;
-    line-height: 28px;
-    font-weight: 900;
-    color: #797979;
-  }
-
-  &__detail-description {
-    margin-top: 15px;
-  }
-
-  &__detail-image,
-  &__detail-info {
-    max-width: 50%;
-  }
-
-  &__detail-info {
-    padding: 0 50px;
-  }
-
-  &__detail-image img {
-    max-width: 100%;
-  }
-
   &__cart-item {
     max-width: 475px;
     position: relative;
