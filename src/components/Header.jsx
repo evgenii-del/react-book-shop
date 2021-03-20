@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Link} from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 import logoutPng from '../assets/images/logout.png';
 import cartPng from '../assets/images/cart.png';
@@ -14,7 +14,7 @@ const Header = () => {
   return (
     <header className="header">
       <Link to="/catalog" className="header__logo">
-          Book Shop
+        Book Shop
       </Link>
       <div className="header__info">
         <form className="header__form">
