@@ -1,22 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Redirect, useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Header } from '../components';
+import { addBookToCart } from '../store/actions';
 
 const Detail = () => {
   const { user, books } = useSelector((state) => state);
+  const dispatch = useDispatch();
   const { id } = useParams();
-  const book = books.data.filter((item) => item.id === id);
+  const [totalCount, setTotalCount] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const book = books.data.find((item) => item.id === id);
   const {
     count,
     price,
     title,
     author,
     description,
-    cover,
-    tags,
-  } = book[0];
+  } = book;
+
+  const handleChangeTotalCount = ({ target }) => {
+    setTotalCount(+target.value);
+    setTotalPrice(target.value * price);
+  };
+
+  const handleSubmitForm = (event) => {
+    event.preventDefault();
+    const cartItem = {
+      book,
+      totalCount,
+      totalPrice,
+    };
+    dispatch(addBookToCart(cartItem));
+  };
 
   if (!user.token) {
     return <Redirect to="/login" />;
@@ -35,10 +52,21 @@ const Detail = () => {
             <h1 className="main__detail-title">{title}</h1>
             <p className="main__detail-author">{author}</p>
             <p className="main__detail-description">{description}</p>
-            <span className="main__detail-price">
+            <p className="main__detail-price">
+              Price:
               {price}
               &#36;
-            </span>
+            </p>
+            <div className="main__detail-footer">
+              <form className="main__detail-form" onSubmit={handleSubmitForm}>
+                <input className="main__detail-input" type="number" min="0" max={count} value={totalCount} onChange={handleChangeTotalCount} />
+                <button className="main__detail-btn" type="submit">Add to cart</button>
+              </form>
+              <p>
+                Total price:
+                {totalPrice}
+              </p>
+            </div>
           </div>
         </div>
       </div>

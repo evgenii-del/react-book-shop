@@ -14,6 +14,11 @@ const initialState = {
     isLoading: false,
     error: null,
   },
+  cart: {
+    books: [],
+    totalCount: 0,
+    totalPrice: 0,
+  },
 };
 
 const composeEnhancers = typeof window === 'object'

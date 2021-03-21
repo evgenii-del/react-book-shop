@@ -1,8 +1,12 @@
 import {
   GET_BOOKS_FAILURE,
   GET_BOOKS_STARTED, GET_BOOKS_SUCCESS,
-  SET_USER, LOGOUT,
+  SET_USER, LOGOUT, ADD_BOOK_TO_CART,
 } from './actions';
+
+const getTotalCount = (arr) => arr.reduce((sum, book) => book.totalCount + sum, 0);
+
+const getTotalPrice = (arr) => arr.reduce((sum, book) => book.totalPrice + sum, 0);
 
 const shopReducer = (state, action) => {
   switch (action.type) {
@@ -42,6 +46,17 @@ const shopReducer = (state, action) => {
         ...state,
         user: {},
       };
+    case ADD_BOOK_TO_CART: {
+      const newCart = {
+        books: [...state.cart.books, action.payload],
+        totalCount: getTotalCount([...state.cart.books, action.payload]),
+        totalPrice: getTotalPrice([...state.cart.books, action.payload]),
+      };
+      return {
+        ...state,
+        cart: newCart,
+      };
+    }
     default:
       return state;
   }
