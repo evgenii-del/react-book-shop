@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 
 import { Card, Header } from '../components';
 import { getCalendarData } from '../store/actions';
@@ -8,10 +7,6 @@ import { getCalendarData } from '../store/actions';
 const Detail = () => {
   const { user, books } = useSelector((state) => state);
   const dispatch = useDispatch();
-
-  if (!user.token) {
-    return <Redirect to="/login" />;
-  }
 
   useEffect(() => {
     dispatch(getCalendarData(user.token));
@@ -23,7 +18,7 @@ const Detail = () => {
       <div className="catalog">
         <h2 className="catalog__title">Catalog</h2>
         <div className="catalog__content">
-          {books.data.map((book) => <Card book={book} />)}
+          {books.data.map((book) => <Card book={book} key={book.id} />)}
         </div>
       </div>
     </div>

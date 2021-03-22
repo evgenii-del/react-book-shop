@@ -16,9 +16,10 @@ export const setUser = (data) => ({
 export const addUser = (userName) => (dispatch) => {
   axios.post('https://js-band-store-api.glitch.me/signin', { username: userName })
     .then((response) => {
+      localStorage.setItem('user', JSON.stringify(response.data));
       dispatch(setUser(response.data));
     })
-    .catch((error) => console.log(error));
+    .catch(() => {});
 };
 
 export const getBooksStarted = () => ({
@@ -46,9 +47,12 @@ export const getCalendarData = (token) => (dispatch) => {
     .catch(({ message }) => dispatch(getBooksFailure(message)));
 };
 
-export const logout = () => ({
-  type: LOGOUT,
-});
+export const logout = () => {
+  localStorage.removeItem('user');
+  return {
+    type: LOGOUT,
+  };
+};
 
 export const addBookToCart = (data) => ({
   type: ADD_BOOK_TO_CART,

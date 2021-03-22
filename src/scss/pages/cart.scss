@@ -1,4 +1,5 @@
 @import '../components/cart-item';
+@import '../components/cart-modal';
 
 .cart {
   padding: 15px 60px;
@@ -36,5 +37,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 15px;
+  }
+
+  &__bottom-btn {
+    cursor: pointer;
+    padding: 5px 15px;
+    background-color: $black;
+    font-size: 15px;
+    height: inherit;
+    color: $white;
+    outline: none;
+    border: 1px solid $black;
+
+    &:hover {
+      transition: .5s;
+      opacity: .5;
+    }
   }
 }

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Redirect, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Header } from '../components';
 import { addBookToCart } from '../store/actions';
 
 const Detail = () => {
-  const { user, books } = useSelector((state) => state);
+  const { books } = useSelector((state) => state);
   const dispatch = useDispatch();
   const { id } = useParams();
   const [totalCount, setTotalCount] = useState(0);
@@ -18,6 +18,7 @@ const Detail = () => {
     title,
     author,
     description,
+    tags,
   } = book;
 
   const handleChangeTotalCount = ({ target }) => {
@@ -35,10 +36,6 @@ const Detail = () => {
     dispatch(addBookToCart(cartItem));
   };
 
-  if (!user.token) {
-    return <Redirect to="/login" />;
-  }
-
   return (
     <div className="container">
       <Header />
@@ -50,6 +47,9 @@ const Detail = () => {
           </div>
           <div className="detail__info">
             <h1 className="detail__info-title">{title}</h1>
+            <div className="detail__info-tags">
+              {tags.map((tag) => <span className="detail__info-tag" key={tag}>{tag}</span>)}
+            </div>
             <p className="detail__info-author">{author}</p>
             <p className="detail__info-description">{description}</p>
             <p className="detail__info-price">

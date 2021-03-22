@@ -1,0 +1,22 @@
+.cart-modal {
+  position: fixed;
+  display: none;
+  width: 720px;
+  height: 250px;
+  background-color: #797979;
+  margin: auto;
+  left: 0;
+  right: 0;
+
+  &_active {
+    display: block;
+  }
+
+  &__title {
+    margin-bottom: 15px;
+  }
+
+  &__content {
+
+  }
+}

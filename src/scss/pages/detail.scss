@@ -27,6 +27,15 @@
   &__info-title {
     font-size: 3rem;
     font-weight: 900;
+    margin-bottom: 20px;
+  }
+
+  &__info-tag {
+    background-color: $black;
+    color: $white;
+    padding: 3px 6px;
+    margin-right: 5px;
+    border-radius: 5px;
   }
 
   &__info-author {

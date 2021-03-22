@@ -3,12 +3,10 @@ import thunk from 'redux-thunk';
 
 import shopReducer from './reducers';
 
+const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : {};
+
 const initialState = {
-  user: {
-    username: '',
-    avatar: '',
-    token: '',
-  },
+  user,
   books: {
     data: [],
     isLoading: false,
