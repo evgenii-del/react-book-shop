@@ -98,5 +98,10 @@
       transition: .5s;
       opacity: .5;
     }
+
+    &:disabled {
+      opacity: .5;
+      cursor: auto;
+    }
   }
 }

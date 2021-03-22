@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import { CartItem, Header } from '../components';
+import emptyPng from '../assets/images/empty-cart.png';
 
 const Cart = () => {
   const { user, cart } = useSelector((state) => state);
@@ -19,7 +20,12 @@ const Cart = () => {
         <div className="cart__content">
           <div className="cart__list">
             {cart.totalCount
-              ? cart.books.map((item) => <CartItem item={item} />) : <span>Empty cart</span>}
+              ? cart.books.map((item) => <CartItem item={item} />) : (
+                <div className="cart__empty">
+                  <img className="cart__empty-image" src={emptyPng} alt="empty cart" />
+                  <p className="cart__empty-text">Cart empty...</p>
+                </div>
+              )}
           </div>
         </div>
       </div>

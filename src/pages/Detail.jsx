@@ -67,7 +67,7 @@ const Detail = () => {
                   value={totalCount}
                   onChange={handleChangeTotalCount}
                 />
-                <button className="detail__btn" type="submit">Add to cart</button>
+                <button className="detail__btn" type="submit" disabled={!totalCount}>Add to cart</button>
               </form>
               <p>
                 Total price:

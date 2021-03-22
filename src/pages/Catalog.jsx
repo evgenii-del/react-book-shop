@@ -9,13 +9,13 @@ const Detail = () => {
   const { user, books } = useSelector((state) => state);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getCalendarData(user.token));
-  }, []);
-
   if (!user.token) {
     return <Redirect to="/login" />;
   }
+
+  useEffect(() => {
+    dispatch(getCalendarData(user.token));
+  }, []);
 
   return (
     <div className="container">

@@ -48,10 +48,19 @@ const shopReducer = (state, action) => {
       };
     case ADD_BOOK_TO_CART: {
       const newCart = {
-        books: [...state.cart.books, action.payload],
-        totalCount: getTotalCount([...state.cart.books, action.payload]),
-        totalPrice: getTotalPrice([...state.cart.books, action.payload]),
+        books: [...state.cart.books],
+        totalCount: getTotalCount([...state.cart.books]),
+        totalPrice: getTotalPrice([...state.cart.books]),
       };
+      const isContaine = state.cart.books.find((book) => book.id === action.payload.id);
+      if (isContaine) {
+        console.log('asd');
+        newCart.books[action.payload.id] = action.payload;
+      } else {
+        newCart.books = [...state.cart.books, action.payload];
+        newCart.totalCount = getTotalCount([...state.cart.books, action.payload]);
+        newCart.totalPrice = getTotalPrice([...state.cart.books, action.payload]);
+      }
       return {
         ...state,
         cart: newCart,
