@@ -1,9 +1,6 @@
-.wrapper {
-  max-width: 1280px;
-  margin: 0 auto;
-}
+@import '../components/card';
 
-.main {
+.catalog {
   padding: 15px 60px;
   background-color: #ffffff;
 
@@ -11,7 +8,7 @@
     margin-bottom: 15px;
   }
 
-  &__catalog {
+  &__content {
     margin: 0 -13px;
     display: flex;
     flex-wrap: wrap;

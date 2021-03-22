@@ -1,5 +1,14 @@
-.main {
-  &__cart-list {
+@import '../components/cart-item';
+
+.cart {
+  padding: 15px 60px;
+  background-color: #ffffff;
+
+  &__title {
+    margin-bottom: 15px;
+  }
+
+  &__list {
     margin: 0 -10px;
     display: flex;
     flex-wrap: wrap;

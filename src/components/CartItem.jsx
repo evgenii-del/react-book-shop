@@ -5,15 +5,15 @@ const CartItem = (props) => {
   const { item } = props;
 
   return (
-    <div className="main__cart-item">
-      <Link to="/catalog/1" className="main__cart-link">
+    <div className="cart-item">
+      <Link to="/catalog/1" className="cart-item__link">
         <img
-          className="main__cart-image"
+          className="cart-item__image"
           src="https://images.pexels.com/photos/5582999/pexels-photo-5582999.jpeg"
           alt="image"
         />
       </Link>
-      <div className="main__cart-info">
+      <div className="cart-item__content">
         <p>{item.book.title}</p>
         <span>
           {item.totalPrice}

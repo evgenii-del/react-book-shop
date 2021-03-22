@@ -18,15 +18,15 @@ const Detail = () => {
   }
 
   return (
-    <>
+    <div className="container">
       <Header />
-      <div className="main">
-        <h2 className="main__title">Catalog</h2>
-        <div className="main__catalog">
+      <div className="catalog">
+        <h2 className="catalog__title">Catalog</h2>
+        <div className="catalog__content">
           {books.data.map((book) => <Card book={book} />)}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -40,27 +40,34 @@ const Detail = () => {
   }
 
   return (
-    <>
+    <div className="container">
       <Header />
-      <div className="main">
-        <h2 className="main__title">Detail</h2>
-        <div className="main__detail">
-          <div className="main__detail-image">
+      <div className="detail">
+        <h2 className="detail__title">Detail</h2>
+        <div className="detail__content">
+          <div className="detail__image">
             <img src="https://images.pexels.com/photos/5582999/pexels-photo-5582999.jpeg" alt={title} />
           </div>
-          <div className="main__detail-info">
-            <h1 className="main__detail-title">{title}</h1>
-            <p className="main__detail-author">{author}</p>
-            <p className="main__detail-description">{description}</p>
-            <p className="main__detail-price">
+          <div className="detail__info">
+            <h1 className="detail__info-title">{title}</h1>
+            <p className="detail__info-author">{author}</p>
+            <p className="detail__info-description">{description}</p>
+            <p className="detail__info-price">
               Price:
               {price}
               &#36;
             </p>
-            <div className="main__detail-footer">
-              <form className="main__detail-form" onSubmit={handleSubmitForm}>
-                <input className="main__detail-input" type="number" min="0" max={count} value={totalCount} onChange={handleChangeTotalCount} />
-                <button className="main__detail-btn" type="submit">Add to cart</button>
+            <div className="detail__footer">
+              <form className="detail__form" onSubmit={handleSubmitForm}>
+                <input
+                  className="detail__input"
+                  type="number"
+                  min="0"
+                  max={count}
+                  value={totalCount}
+                  onChange={handleChangeTotalCount}
+                />
+                <button className="detail__btn" type="submit">Add to cart</button>
               </form>
               <p>
                 Total price:
@@ -70,7 +77,7 @@ const Detail = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

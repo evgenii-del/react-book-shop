@@ -1,4 +1,4 @@
-.main {
+.detail {
   padding: 15px 60px;
   background-color: #ffffff;
 
@@ -6,17 +6,30 @@
     margin-bottom: 15px;
   }
 
-  &__detail {
+  &__content {
     display: flex;
     justify-content: space-between;
   }
 
-  &__detail-title {
+  &__image img {
+    max-width: 100%;
+  }
+
+  &__image,
+  &__info {
+    max-width: 50%;
+  }
+
+  &__info {
+    padding: 0 50px;
+  }
+
+  &__info-title {
     font-size: 3rem;
     font-weight: 900;
   }
 
-  &__detail-author {
+  &__info-author {
     position: relative;
     margin: 15px 0;
     font-size: 1.5rem;
@@ -33,37 +46,24 @@
     }
   }
 
-  &__detail-price {
+  &__info-description {
+    font-size: 1.5rem;
+  }
+
+  &__info-price {
     margin: 15px 0;
     font-size: 1.5rem;
     font-weight: 900;
     color: #797979;
   }
 
-  &__detail-description {
-    font-size: 1.5rem;
-  }
-
-  &__detail-image,
-  &__detail-info {
-    max-width: 50%;
-  }
-
-  &__detail-info {
-    padding: 0 50px;
-  }
-
-  &__detail-image img {
-    max-width: 100%;
-  }
-
-  &__detail-footer {
+  &__footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  &__detail-form {
+  &__form {
     display: flex;
     align-items: center;
     width: 100%;
@@ -72,7 +72,7 @@
     background-color: #ffffff;
   }
 
-  &__detail-input {
+  &__input {
     font-weight: normal;
     font-size: 16px;
     width: 100%;
@@ -84,7 +84,7 @@
     outline: none;
   }
 
-  &__detail-btn {
+  &__btn {
     cursor: pointer;
     padding: 10px 25px;
     background-color: $black;

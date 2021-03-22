@@ -2,7 +2,6 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-// eslint-disable-next-line import/named
 import { CartItem, Header } from '../components';
 
 const Cart = () => {
@@ -13,17 +12,18 @@ const Cart = () => {
   }
 
   return (
-    <>
+    <div className="container">
       <Header />
-      <div className="main">
-        <h2 className="main__title">Cart</h2>
-        <div className="main__cart">
-          <div className="main__cart-list">
-            {cart.books.map((item) => <CartItem item={item} />)}
+      <div className="cart">
+        <h2 className="cart__title">Cart</h2>
+        <div className="cart__content">
+          <div className="cart__list">
+            {cart.totalCount
+              ? cart.books.map((item) => <CartItem item={item} />) : <span>Empty cart</span>}
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

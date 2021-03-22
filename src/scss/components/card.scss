@@ -1,10 +1,8 @@
 .card {
   max-width: calc(100% / 6 - 26px);
   margin: 0 13px 45px;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   flex-direction: column;
-  text-decoration: none;
   align-self: flex-start;
 
   &__header {
@@ -13,23 +11,23 @@
     overflow: hidden;
   }
 
-  &__main {
+  &__content {
     padding-top: 15px;
     display: flex;
     flex-direction: column;
   }
 
-  &__main-price {
+  &__price {
     margin: 5px 0;
   }
 
-  &__main-title {
+  &__title {
     font-size: 1rem;
   }
 
-  &__main-price,
-  &__main-title,
-  &__main-author {
+  &__price,
+  &__title,
+  &__author {
     color: $black;
   }
 
