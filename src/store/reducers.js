@@ -1,7 +1,7 @@
 import {
   GET_BOOKS_FAILURE,
   GET_BOOKS_STARTED, GET_BOOKS_SUCCESS,
-  SET_USER, LOGOUT, ADD_BOOK_TO_CART,
+  SET_USER, LOGOUT, ADD_BOOK_TO_CART, CLEAR_CART,
 } from './actions';
 
 const getTotalCount = (arr) => arr.reduce((sum, book) => book.totalCount + sum, 0);
@@ -46,21 +46,17 @@ const shopReducer = (state, action) => {
         ...state,
         user: {},
       };
+    case CLEAR_CART:
+      return {
+        ...state,
+        cart: {},
+      };
     case ADD_BOOK_TO_CART: {
       const newCart = {
-        books: [...state.cart.books],
-        totalCount: getTotalCount([...state.cart.books]),
-        totalPrice: getTotalPrice([...state.cart.books]),
+        books: [...state.cart.books, action.payload],
+        totalCount: getTotalCount([...state.cart.books, action.payload]),
+        totalPrice: getTotalPrice([...state.cart.books, action.payload]),
       };
-      const isContaine = state.cart.books.find((book) => book.id === action.payload.id);
-      if (isContaine) {
-        console.log('asd');
-        newCart.books[action.payload.id] = action.payload;
-      } else {
-        newCart.books = [...state.cart.books, action.payload];
-        newCart.totalCount = getTotalCount([...state.cart.books, action.payload]);
-        newCart.totalPrice = getTotalPrice([...state.cart.books, action.payload]);
-      }
       return {
         ...state,
         cart: newCart,

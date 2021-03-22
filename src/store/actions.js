@@ -6,6 +6,7 @@ export const GET_BOOKS_SUCCESS = 'GET_BOOKS_SUCCESS';
 export const GET_BOOKS_FAILURE = 'GET_BOOKS_FAILURE';
 export const LOGOUT = 'LOGOUT';
 export const ADD_BOOK_TO_CART = 'ADD_BOOK_TO_CART';
+export const CLEAR_CART = 'CLEAR_CART';
 
 export const setUser = (data) => ({
   type: SET_USER,
@@ -52,4 +53,8 @@ export const logout = () => ({
 export const addBookToCart = (data) => ({
   type: ADD_BOOK_TO_CART,
   payload: data,
+});
+
+export const clearCart = () => ({
+  type: CLEAR_CART,
 });
