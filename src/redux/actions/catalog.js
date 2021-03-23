@@ -20,11 +20,12 @@ export const getBooksFailure = (error) => ({
 
 export const getCalendarData = (token) => (dispatch) => {
   dispatch(getBooksStarted());
-  axios.get('https://js-band-store-api.glitch.me/books', {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  })
+  axios
+    .get('https://js-band-store-api.glitch.me/books', {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
     .then(({ data }) => dispatch(getBooksSuccess(data)))
     .catch(({ message }) => dispatch(getBooksFailure(message)));
 };

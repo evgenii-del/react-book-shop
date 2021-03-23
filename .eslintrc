@@ -1,10 +1,6 @@
 {
-  "extends": [
-    "airbnb"
-  ],
-  "plugins": [
-    "react"
-  ],
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["react", "prettier"],
   "rules": {
     "react/prop-types": 0,
     "jsx-a11y/label-has-associated-control": 0,
@@ -13,6 +9,14 @@
     "jsx-a11y/img-redundant-alt": 0,
     "jsx-a11y/control-has-assoc\niated-label\n": 0,
     "no-undef": 0,
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "prettier/prettier": "error",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "react/state-in-constructor": "off"
   }
 }

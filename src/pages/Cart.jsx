@@ -28,7 +28,8 @@ const Cart = (props) => {
     const headers = { Authorization: `Bearer ${user.token}` };
     setIsPopupOpen(true);
     setIsOverlayOpen(true);
-    axios.post('https://js-band-store-api.glitch.me/purchase', { books }, { headers })
+    axios
+      .post('https://js-band-store-api.glitch.me/purchase', { books }, { headers })
       .then(() => {})
       .catch(() => {});
   };
@@ -41,7 +42,9 @@ const Cart = (props) => {
         {cart.totalCount ? (
           <div className="cart__content">
             <div className="cart__list">
-              {cart.books.map((item) => <CartItem item={item} key={item.book.id} />)}
+              {cart.books.map((item) => (
+                <CartItem item={item} key={item.book.id} />
+              ))}
             </div>
             <div className="cart__bottom">
               <p>
@@ -49,8 +52,12 @@ const Cart = (props) => {
                 {cart.totalPrice.toFixed(2)}
               </p>
               <div className="cart__buttons">
-                <button className="cart__btn" type="button" onClick={handleClearCart}>Clear cart</button>
-                <button className="cart__btn" type="button" onClick={handlePurchase}>Purchase</button>
+                <button className="cart__btn" type="button" onClick={handleClearCart}>
+                  Clear cart
+                </button>
+                <button className="cart__btn" type="button" onClick={handlePurchase}>
+                  Purchase
+                </button>
               </div>
             </div>
           </div>
@@ -61,7 +68,12 @@ const Cart = (props) => {
           </div>
         )}
         <div className={`cart-modal ${isPopupOpen ? 'cart-modal_active' : undefined}`}>
-          <button className="cart-modal__btn" type="button" name="button" onClick={handleCloseModal}>
+          <button
+            className="cart-modal__btn"
+            type="button"
+            name="button"
+            onClick={handleCloseModal}
+          >
             <img src={closeSvg} alt="close" aria-label="remove item from cart" />
           </button>
           <h3 className="cart-modal__title">You successfully placed an order!</h3>

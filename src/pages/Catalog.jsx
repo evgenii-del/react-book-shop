@@ -18,7 +18,9 @@ const Detail = () => {
       <div className="catalog">
         <h2 className="catalog__title">Catalog</h2>
         <div className="catalog__content">
-          {books.data.map((book) => <Card book={book} key={book.id} />)}
+          {books.data.map((book) => (
+            <Card book={book} key={book.id} />
+          ))}
         </div>
       </div>
     </div>

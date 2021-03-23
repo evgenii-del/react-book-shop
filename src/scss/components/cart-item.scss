@@ -6,7 +6,7 @@
   width: 100%;
   padding: 15px;
   margin: 5px 10px;
-  border: 1px solid #DCDCDC;
+  border: 1px solid #dcdcdc;
   border-radius: 5px;
 
   &__btn {
@@ -55,7 +55,7 @@
     width: 25px;
     height: 25px;
     padding: 5px;
-    background-color: #E1E8EE;
+    background-color: #e1e8ee;
     border-radius: 6px;
     border: none;
     cursor: pointer;
@@ -66,7 +66,7 @@
 
     &:disabled {
       cursor: auto;
-      opacity: .5;
+      opacity: 0.5;
     }
   }
 
@@ -80,7 +80,7 @@
   &__total-price {
     text-align: center;
     font-size: 16px;
-    color: #43484D;
+    color: #43484d;
     font-weight: 300;
   }
 }

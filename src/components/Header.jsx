@@ -25,8 +25,15 @@ const Header = () => {
       </Link>
       <div className="header__info">
         <form className="header__form">
-          <input className="header__form-input" type="text" value={search} onChange={handleChangeSearch} />
-          <button className="header__form-btn" type="button">Search</button>
+          <input
+            className="header__form-input"
+            type="text"
+            value={search}
+            onChange={handleChangeSearch}
+          />
+          <button className="header__form-btn" type="button">
+            Search
+          </button>
         </form>
         <div className="header__cart" onClick={handleLogout} aria-hidden>
           <img className="header__cart-image" src={logoutPng} alt="logout" />

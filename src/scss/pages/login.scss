@@ -42,12 +42,12 @@
     cursor: pointer;
 
     &:hover {
-      transition: .5s;
-      opacity: .5;
+      transition: 0.5s;
+      opacity: 0.5;
     }
 
     &:disabled {
-      opacity: .5;
+      opacity: 0.5;
       cursor: auto;
     }
   }

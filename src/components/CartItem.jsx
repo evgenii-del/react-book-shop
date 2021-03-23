@@ -5,7 +5,11 @@ import { useDispatch } from 'react-redux';
 import closeSvg from '../assets/images/close.svg';
 import addSvg from '../assets/images/add.svg';
 import minusSvg from '../assets/images/minus.svg';
-import { decreaseCountOfBook, increaseCountOfBook, removeBookFromCart } from '../redux/actions/cart';
+import {
+  decreaseCountOfBook,
+  increaseCountOfBook,
+  removeBookFromCart,
+} from '../redux/actions/cart';
 
 const CartItem = (props) => {
   const dispatch = useDispatch();
@@ -39,17 +43,27 @@ const CartItem = (props) => {
         <p>{item.book.title}</p>
         <div className="cart-item__bottom">
           <div className="cart-item__quantity">
-            <button className="cart-item__add-btn" type="button" name="button" disabled={item.book.count <= item.totalCount} onClick={handleIncreaseBook}>
+            <button
+              className="cart-item__add-btn"
+              type="button"
+              name="button"
+              disabled={item.book.count <= item.totalCount}
+              onClick={handleIncreaseBook}
+            >
               <img src={addSvg} alt="increase item in cart" />
             </button>
             <span className="cart-item__total-count">{item.totalCount}</span>
-            <button className="cart-item__minus-btn" type="button" name="button" disabled={item.totalCount <= 1} onClick={handleDecreaseBook}>
+            <button
+              className="cart-item__minus-btn"
+              type="button"
+              name="button"
+              disabled={item.totalCount <= 1}
+              onClick={handleDecreaseBook}
+            >
               <img src={minusSvg} alt="decrease item in cart" />
             </button>
           </div>
-          <span className="cart-item__total-price">
-            {item.totalPrice.toFixed(2)}
-          </span>
+          <span className="cart-item__total-price">{item.totalPrice.toFixed(2)}</span>
         </div>
       </div>
     </div>
