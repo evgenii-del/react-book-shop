@@ -3,10 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 
 import { CartItem, Header } from '../components';
-import emptyPng from '../assets/images/empty-cart.png';
 import { clearCart } from '../redux/actions/cart';
+import emptyPng from '../assets/images/empty-cart.png';
+import closeSvg from '../assets/images/close.svg';
 
-const Cart = () => {
+const Cart = (props) => {
+  const { setIsOverlayOpen } = props;
   const { user, cart } = useSelector((state) => state);
   const dispatch = useDispatch();
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -15,11 +17,19 @@ const Cart = () => {
     dispatch(clearCart());
   };
 
+  const handleCloseModal = () => {
+    setIsPopupOpen(false);
+    setIsOverlayOpen(false);
+    dispatch(clearCart());
+  };
+
   const handlePurchase = () => {
     const books = JSON.stringify(cart.books);
     const headers = { Authorization: `Bearer ${user.token}` };
+    setIsPopupOpen(true);
+    setIsOverlayOpen(true);
     axios.post('https://js-band-store-api.glitch.me/purchase', { books }, { headers })
-      .then(() => dispatch(clearCart()))
+      .then(() => {})
       .catch(() => {});
   };
 
@@ -51,10 +61,31 @@ const Cart = () => {
           </div>
         )}
         <div className={`cart-modal ${isPopupOpen ? 'cart-modal_active' : undefined}`}>
+          <button className="cart-modal__btn" type="button" name="button" onClick={handleCloseModal}>
+            <img src={closeSvg} alt="close" aria-label="remove item from cart" />
+          </button>
           <h3 className="cart-modal__title">You successfully placed an order!</h3>
-          <div className="cart-modal__content">
-            <p>content</p>
-          </div>
+          <table className="cart-modal__table">
+            <thead>
+              <tr>
+                <th className="cart-modal__table-th">Title</th>
+                <th className="cart-modal__table-th">Count</th>
+                <th className="cart-modal__table-th">Price</th>
+                <th className="cart-modal__table-th">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cart.books.map((item) => (
+                <tr key={item.book.id}>
+                  <td className="cart-modal__table-td">{item.book.title}</td>
+                  <td className="cart-modal__table-td">{item.totalCount}</td>
+                  <td className="cart-modal__table-td">{item.book.price}</td>
+                  <td className="cart-modal__table-td">{item.totalPrice.toFixed(2)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <div className="cart-modal__total-price">{cart.totalPrice.toFixed(2)}</div>
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,6 +13,7 @@ import {
 
 const App = () => {
   const { token } = useSelector((state) => state.user);
+  const [isOverlayOpen, setIsOverlayOpen] = useState(false);
 
   return (
     <div className="wrapper">
@@ -20,11 +21,12 @@ const App = () => {
         <Switch>
           <Route exact path="/catalog" render={() => (token ? <Catalog /> : <Redirect to="/login" />)} />
           <Route exact path="/catalog/:id" render={() => (token ? <Detail /> : <Redirect to="/login" />)} />
-          <Route exact path="/cart" render={() => (token ? <Cart /> : <Redirect to="/login" />)} />
+          <Route exact path="/cart" render={() => (token ? <Cart setIsOverlayOpen={setIsOverlayOpen} /> : <Redirect to="/login" />)} />
           <Route exact path="/login" render={() => <Login />} />
           <Route exact path="*" render={() => <NotFound />} />
         </Switch>
       </Router>
+      <div className={`overlay ${isOverlayOpen ? 'overlay_active' : undefined}`} />
     </div>
   );
 };
