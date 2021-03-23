@@ -1,8 +1,12 @@
 .nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   padding: 30px 60px;
   border-bottom: 1px solid #eeeeee;
 
-  &__form-input {
+  &__select,
+  &__input {
     font-size: 16px;
     max-width: 300px;
     width: 100%;
@@ -10,5 +14,9 @@
     padding-left: 14px;
     padding-right: 14px;
     border: 1px solid $black;
+  }
+
+  &__select {
+    margin-right: 15px;
   }
 }
