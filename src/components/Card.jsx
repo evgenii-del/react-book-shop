@@ -9,6 +9,7 @@ const Card = (props) => {
     author,
     title,
   } = book;
+
   return (
     <article className="card" key={id}>
       <Link to={`/catalog/${id}`}>
@@ -17,10 +18,7 @@ const Card = (props) => {
         </div>
         <div className="card__content">
           <h2 className="card__title">{title}</h2>
-          <span className="card__price">
-            {price}
-            &#36;
-          </span>
+          <span className="card__price">{price}</span>
           <span className="card__author">{author}</span>
         </div>
       </Link>

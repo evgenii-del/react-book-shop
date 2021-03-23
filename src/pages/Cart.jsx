@@ -9,7 +9,11 @@ import { clearCart } from '../store/actions';
 const Cart = () => {
   const { user, cart } = useSelector((state) => state);
   const dispatch = useDispatch();
-  const [isPopupOpen, setIsPopupOpen] = useState(true);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const handleClearCart = () => {
+    dispatch(clearCart());
+  };
 
   const handlePurchase = () => {
     const books = JSON.stringify(cart.books);
@@ -32,9 +36,12 @@ const Cart = () => {
             <div className="cart__bottom">
               <p>
                 Total price:
-                {cart.totalPrice}
+                {cart.totalPrice.toFixed(2)}
               </p>
-              <button className="cart__bottom-btn" type="button" onClick={handlePurchase}>Purchase</button>
+              <div className="cart__buttons">
+                <button className="cart__btn" type="button" onClick={handleClearCart}>Clear cart</button>
+                <button className="cart__btn" type="button" onClick={handlePurchase}>Purchase</button>
+              </div>
             </div>
           </div>
         ) : (

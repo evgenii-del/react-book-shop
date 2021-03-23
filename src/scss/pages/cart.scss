@@ -40,7 +40,7 @@
     margin-top: 15px;
   }
 
-  &__bottom-btn {
+  &__btn {
     cursor: pointer;
     padding: 5px 15px;
     background-color: $black;
@@ -49,6 +49,10 @@
     color: $white;
     outline: none;
     border: 1px solid $black;
+
+    &:first-child {
+      margin-right: 15px;
+    }
 
     &:hover {
       transition: .5s;

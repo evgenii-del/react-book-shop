@@ -1,19 +1,18 @@
-import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React from 'react';
+import { useParams, useHistory, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Header } from '../components';
 import { addBookToCart } from '../store/actions';
 
 const Detail = () => {
-  const { books } = useSelector((state) => state);
+  const { books, cart } = useSelector((state) => state);
   const dispatch = useDispatch();
+  const history = useHistory();
   const { id } = useParams();
-  const [totalCount, setTotalCount] = useState(0);
-  const [totalPrice, setTotalPrice] = useState(0);
   const book = books.data.find((item) => item.id === id);
+  const isInCart = cart.books.find((item) => item.book.id === id);
   const {
-    count,
     price,
     title,
     author,
@@ -21,19 +20,14 @@ const Detail = () => {
     tags,
   } = book;
 
-  const handleChangeTotalCount = ({ target }) => {
-    setTotalCount(+target.value);
-    setTotalPrice(target.value * price);
-  };
-
-  const handleSubmitForm = (event) => {
-    event.preventDefault();
+  const handleAddBookToCart = () => {
     const cartItem = {
       book,
-      totalCount,
-      totalPrice,
+      totalCount: 1,
+      totalPrice: book.price,
     };
     dispatch(addBookToCart(cartItem));
+    history.push('/cart');
   };
 
   return (
@@ -52,27 +46,10 @@ const Detail = () => {
             </div>
             <p className="detail__info-author">{author}</p>
             <p className="detail__info-description">{description}</p>
-            <p className="detail__info-price">
-              Price:
-              {price}
-              &#36;
-            </p>
             <div className="detail__footer">
-              <form className="detail__form" onSubmit={handleSubmitForm}>
-                <input
-                  className="detail__input"
-                  type="number"
-                  min="0"
-                  max={count}
-                  value={totalCount}
-                  onChange={handleChangeTotalCount}
-                />
-                <button className="detail__btn" type="submit" disabled={!totalCount}>Add to cart</button>
-              </form>
-              <p>
-                Total price:
-                {totalPrice}
-              </p>
+              <p className="detail__info-price">{price}</p>
+              {isInCart ? <Link to="/cart">The book is already in the basket. Go to cart</Link>
+                : <button className="detail__btn" type="button" onClick={handleAddBookToCart}>Add to cart</button>}
             </div>
           </div>
         </div>

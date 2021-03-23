@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import logoutPng from '../assets/images/logout.png';
@@ -16,7 +16,6 @@ const Header = () => {
 
   const handleLogout = () => {
     dispatch(logout());
-    return <Redirect to="/login" />;
   };
 
   return (
