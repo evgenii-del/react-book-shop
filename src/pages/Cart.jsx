@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import { CartItem, Header } from '../components';
 import emptyPng from '../assets/images/empty-cart.png';
-import { clearCart } from '../store/actions';
+import { clearCart } from '../redux/actions/cart';
 
 const Cart = () => {
   const { user, cart } = useSelector((state) => state);

@@ -3,7 +3,7 @@ import { useParams, useHistory, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Header } from '../components';
-import { addBookToCart } from '../store/actions';
+import { addBookToCart } from '../redux/actions/cart';
 
 const Detail = () => {
   const { books, cart } = useSelector((state) => state);

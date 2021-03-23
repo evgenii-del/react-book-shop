@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 
 import logoutPng from '../assets/images/logout.png';
 import cartPng from '../assets/images/cart.png';
-import { logout } from '../store/actions';
+import { logout } from '../redux/actions/user';
 
 const Header = () => {
   const dispatch = useDispatch();

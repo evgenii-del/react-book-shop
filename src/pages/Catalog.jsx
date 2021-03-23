@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Card, Header } from '../components';
-import { getCalendarData } from '../store/actions';
+import { getCalendarData } from '../redux/actions/catalog';
 
 const Detail = () => {
   const { user, books } = useSelector((state) => state);

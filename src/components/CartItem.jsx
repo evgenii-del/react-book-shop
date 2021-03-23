@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import closeSvg from '../assets/images/close.svg';
-import { removeBookFromCart, increaseCountOfBook, decreaseCountOfBook } from '../store/actions';
 import addSvg from '../assets/images/add.svg';
 import minusSvg from '../assets/images/minus.svg';
+import { decreaseCountOfBook, increaseCountOfBook, removeBookFromCart } from '../redux/actions/cart';
 
 const CartItem = (props) => {
   const dispatch = useDispatch();

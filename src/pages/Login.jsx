@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-import { addUser } from '../store/actions';
+import { addUser } from '../redux/actions/user';
 
 const MIN_LENGTH = 4;
 const MAX_LENGTH = 16;
@@ -32,7 +32,7 @@ const Login = () => {
       <form className="login__form">
         <label className="login__input-label" htmlFor="login">Name</label>
         <input className="login__input" type="text" placeholder="Enter your name" id="login" value={login} onChange={handleChangeLogin} />
-        <button className="login__btn" type="submit" disabled={loginError} onClick={handleLogin}>Continue</button>
+        <button className="login__btn" type="button" disabled={loginError} onClick={handleLogin}>Continue</button>
       </form>
     </div>
   );
