@@ -1,33 +1,64 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import axios from 'axios';
 
-import { Header } from '../components';
+import { CartItem, Header } from '../components';
+import emptyPng from '../assets/images/empty-cart.png';
+import { clearCart } from '../redux/actions/cart';
 
-const Cart = () => (
-  <>
-    <Header />
-    <div className="main">
-      <h2 className="main__title">Cart</h2>
-      <div className="main__cart">
-        <div className="main__cart-list">
-          <div className="main__cart-item">
-            <Link to="/catalog/1" className="main__cart-link">
-              <img
-                className="main__cart-image"
-                src="https://images.pexels.com/photos/5582999/pexels-photo-5582999.jpeg"
-                alt="image"
-              />
-            </Link>
-            <div className="main__cart-info">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-              <span>15 $ x 1 item</span>
-              <button type="button" aria-label="remove from cart" />
+const Cart = () => {
+  const { user, cart } = useSelector((state) => state);
+  const dispatch = useDispatch();
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const handleClearCart = () => {
+    dispatch(clearCart());
+  };
+
+  const handlePurchase = () => {
+    const books = JSON.stringify(cart.books);
+    const headers = { Authorization: `Bearer ${user.token}` };
+    axios.post('https://js-band-store-api.glitch.me/purchase', { books }, { headers })
+      .then(() => dispatch(clearCart()))
+      .catch(() => {});
+  };
+
+  return (
+    <div className="container">
+      <Header />
+      <div className="cart">
+        <h2 className="cart__title">Cart</h2>
+        {cart.totalCount ? (
+          <div className="cart__content">
+            <div className="cart__list">
+              {cart.books.map((item) => <CartItem item={item} key={item.book.id} />)}
             </div>
+            <div className="cart__bottom">
+              <p>
+                Total price:
+                {cart.totalPrice.toFixed(2)}
+              </p>
+              <div className="cart__buttons">
+                <button className="cart__btn" type="button" onClick={handleClearCart}>Clear cart</button>
+                <button className="cart__btn" type="button" onClick={handlePurchase}>Purchase</button>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="cart__empty">
+            <img className="cart__empty-image" src={emptyPng} alt="empty cart" />
+            <p className="cart__empty-text">Cart empty...</p>
+          </div>
+        )}
+        <div className={`cart-modal ${isPopupOpen ? 'cart-modal_active' : undefined}`}>
+          <h3 className="cart-modal__title">You successfully placed an order!</h3>
+          <div className="cart-modal__content">
+            <p>content</p>
           </div>
         </div>
       </div>
     </div>
-  </>
-);
+  );
+};
 
 export default Cart;

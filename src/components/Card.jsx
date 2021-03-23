@@ -1,21 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Card = () => (
-  <article className="card">
-    <div className="card__header">
-      <Link to="/catalog/1">
-        <img src="https://images.pexels.com/photos/5582999/pexels-photo-5582999.jpeg" alt="" />
+const Card = (props) => {
+  const { book } = props;
+  const {
+    id,
+    price,
+    author,
+    title,
+  } = book;
+
+  return (
+    <article className="card" key={id}>
+      <Link to={`/catalog/${id}`}>
+        <div className="card__header">
+          <img src="https://images.pexels.com/photos/5582999/pexels-photo-5582999.jpeg" alt="image" />
+        </div>
+        <div className="card__content">
+          <h2 className="card__title">{title}</h2>
+          <span className="card__price">{price}</span>
+          <span className="card__author">{author}</span>
+        </div>
       </Link>
-    </div>
-    <div className="card__main">
-      <span className="card__main-price">15 $</span>
-      <span className="card__main-author">Author name</span>
-      <Link to="/catalog/1" className="card__main-description">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-      </Link>
-    </div>
-  </article>
-);
+    </article>
+  );
+};
 
 export default Card;

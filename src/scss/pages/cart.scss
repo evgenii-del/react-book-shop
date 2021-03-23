@@ -1,0 +1,62 @@
+@import '../components/cart-item';
+@import '../components/cart-modal';
+
+.cart {
+  padding: 15px 60px;
+  background-color: #ffffff;
+
+  &__title {
+    margin-bottom: 15px;
+  }
+
+  &__list {
+    margin: 0 -10px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px auto 0 auto;
+  }
+
+  &__empty-image {
+    max-width: 50px;
+    margin-bottom: 15px;
+  }
+
+  &__empty-text {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-right: -5px;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+  }
+
+  &__btn {
+    cursor: pointer;
+    padding: 5px 15px;
+    background-color: $black;
+    font-size: 15px;
+    height: inherit;
+    color: $white;
+    outline: none;
+    border: 1px solid $black;
+
+    &:first-child {
+      margin-right: 15px;
+    }
+
+    &:hover {
+      transition: .5s;
+      opacity: .5;
+    }
+  }
+}
