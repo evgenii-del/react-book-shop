@@ -3,16 +3,13 @@ import { Link } from 'react-router-dom';
 
 const Card = (props) => {
   const { book } = props;
-  const { id, price, author, title } = book;
+  const { id, price, author, title, cover } = book;
 
   return (
     <article className="card" key={id}>
       <Link to={`/catalog/${id}`}>
         <div className="card__header">
-          <img
-            src="https://images.pexels.com/photos/5582999/pexels-photo-5582999.jpeg"
-            alt="image"
-          />
+          <img className="card__image" src={cover} alt="image" />
         </div>
         <div className="card__content">
           <h2 className="card__title">{title}</h2>

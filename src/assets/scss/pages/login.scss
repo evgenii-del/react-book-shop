@@ -15,6 +15,7 @@
   }
 
   &__title {
+    text-align: center;
     margin: 25px 0;
   }
 
@@ -43,7 +44,7 @@
 
     &:hover {
       transition: 0.5s;
-      opacity: 0.5;
+      opacity: 0.75;
     }
 
     &:disabled {

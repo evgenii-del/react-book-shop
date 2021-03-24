@@ -32,12 +32,8 @@ const CartItem = (props) => {
       <button className="cart-item__btn" type="button" name="button" onClick={handleRemoveItem}>
         <img src={closeSvg} alt="close" aria-label="remove item from cart" />
       </button>
-      <Link to="/catalog/1" className="cart-item__link">
-        <img
-          className="cart-item__image"
-          src="https://images.pexels.com/photos/5582999/pexels-photo-5582999.jpeg"
-          alt="image"
-        />
+      <Link to={`/catalog/${item.book.id}`} className="cart-item__link">
+        <img className="cart-item__image" src={item.book.cover} alt="image" />
       </Link>
       <div className="cart-item__content">
         <p>{item.book.title}</p>

@@ -12,7 +12,7 @@ const Detail = () => {
   const { id } = useParams();
   const book = books.data.find((item) => item.id === id);
   const isInCart = cart.books.find((item) => item.book.id === id);
-  const { price, title, author, description, tags } = book;
+  const { price, title, author, description, tags, cover } = book;
 
   const handleAddBookToCart = () => {
     const cartItem = {
@@ -30,11 +30,8 @@ const Detail = () => {
       <div className="detail">
         <h2 className="detail__title">Detail</h2>
         <div className="detail__content">
-          <div className="detail__image">
-            <img
-              src="https://images.pexels.com/photos/5582999/pexels-photo-5582999.jpeg"
-              alt={title}
-            />
+          <div className="detail__image-container">
+            <img className="detail__image" src={cover} alt={title} />
           </div>
           <div className="detail__info">
             <h1 className="detail__info-title">{title}</h1>

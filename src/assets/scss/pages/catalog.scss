@@ -14,3 +14,9 @@
     flex-wrap: wrap;
   }
 }
+
+@media (max-width: 480px) {
+  .catalog {
+    padding: 15px 20px;
+  }
+}

@@ -49,3 +49,13 @@
     margin-left: 10px;
   }
 }
+
+@media (max-width: 480px) {
+  .header {
+    padding: 30px 20px;
+
+    &__cart {
+      margin-right: 15px;
+    }
+  }
+}

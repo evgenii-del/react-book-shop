@@ -29,7 +29,7 @@ const Login = () => {
         src="https://images.pexels.com/photos/4769487/pexels-photo-4769487.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
         alt="img"
       />
-      <h1 className="login__title">Login</h1>
+      <h1 className="login__title">JS Band Store</h1>
       <form className="login__form">
         <label className="login__input-label" htmlFor="login">
           Name
