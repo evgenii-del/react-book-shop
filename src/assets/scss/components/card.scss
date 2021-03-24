@@ -42,6 +42,12 @@
   }
 }
 
+@media (max-width: 720px) {
+  .card {
+    max-width: calc(100% / 2 - 26px);
+  }
+}
+
 @media (max-width: 480px) {
   .card {
     max-width: none;

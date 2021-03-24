@@ -13,7 +13,7 @@ const Card = (props) => {
         </div>
         <div className="card__content">
           <h2 className="card__title">{title}</h2>
-          <span className="card__price">{price}</span>
+          <span className="card__price">{`Price: ${price}$`}</span>
           <span className="card__author">{author}</span>
         </div>
       </Link>

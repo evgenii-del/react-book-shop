@@ -45,9 +45,9 @@ const Detail = () => {
             <p className="detail__info-author">{author}</p>
             <p className="detail__info-description">{description}</p>
             <div className="detail__footer">
-              <p className="detail__info-price">{price}</p>
+              <p className="detail__info-price">{`Price: ${price}$`}</p>
               {isInCart ? (
-                <Link to="/cart">The book is already in the basket. Go to cart</Link>
+                <Link to="/cart">The book is already in the cart.</Link>
               ) : (
                 <button className="detail__btn" type="button" onClick={handleAddBookToCart}>
                   Add to cart

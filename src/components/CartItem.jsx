@@ -59,7 +59,7 @@ const CartItem = (props) => {
               <img src={minusSvg} alt="decrease item in cart" />
             </button>
           </div>
-          <span className="cart-item__total-price">{item.totalPrice.toFixed(2)}</span>
+          <span className="cart-item__total-price">{`${item.totalPrice.toFixed(2)}$`}</span>
         </div>
       </div>
     </div>

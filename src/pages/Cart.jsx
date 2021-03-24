@@ -47,10 +47,7 @@ const Cart = (props) => {
               ))}
             </div>
             <div className="cart__bottom">
-              <p>
-                Total price:
-                {cart.totalPrice.toFixed(2)}
-              </p>
+              <p>{`Total: ${cart.totalPrice.toFixed(2)}$`}</p>
               <div className="cart__buttons">
                 <button className="cart__btn" type="button" onClick={handleClearCart}>
                   Clear cart
@@ -77,27 +74,29 @@ const Cart = (props) => {
             <img src={closeSvg} alt="close" aria-label="remove item from cart" />
           </button>
           <h3 className="cart-modal__title">You successfully placed an order!</h3>
-          <table className="cart-modal__table">
-            <thead>
-              <tr>
-                <th className="cart-modal__table-th">Title</th>
-                <th className="cart-modal__table-th">Count</th>
-                <th className="cart-modal__table-th">Price</th>
-                <th className="cart-modal__table-th">Total</th>
-              </tr>
-            </thead>
-            <tbody>
-              {cart.books.map((item) => (
-                <tr key={item.book.id}>
-                  <td className="cart-modal__table-td">{item.book.title}</td>
-                  <td className="cart-modal__table-td">{item.totalCount}</td>
-                  <td className="cart-modal__table-td">{item.book.price}</td>
-                  <td className="cart-modal__table-td">{item.totalPrice.toFixed(2)}</td>
+          <div className="cart-modal__table-wrapper">
+            <table className="cart-modal__table">
+              <thead>
+                <tr>
+                  <th className="cart-modal__table-th">Title</th>
+                  <th className="cart-modal__table-th">Count</th>
+                  <th className="cart-modal__table-th">Price</th>
+                  <th className="cart-modal__table-th">Total</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-          <div className="cart-modal__total-price">{cart.totalPrice.toFixed(2)}</div>
+              </thead>
+              <tbody>
+                {cart.books.map((item) => (
+                  <tr key={item.book.id}>
+                    <td className="cart-modal__table-td">{item.book.title}</td>
+                    <td className="cart-modal__table-td">{item.totalCount}</td>
+                    <td className="cart-modal__table-td">{item.book.price}</td>
+                    <td className="cart-modal__table-td">{item.totalPrice.toFixed(2)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="cart-modal__total-price">{`Total: ${cart.totalPrice.toFixed(2)}$`}</div>
         </div>
       </div>
     </div>

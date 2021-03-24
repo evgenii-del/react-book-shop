@@ -1,7 +1,8 @@
 .cart-modal {
   position: fixed;
   display: none;
-  width: 720px;
+  max-width: 700px;
+  width: 100%;
   background-color: $white;
   margin: auto;
   padding: 25px;
@@ -9,6 +10,7 @@
   border-radius: 15px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
   z-index: 6;
+  top: 25%;
   left: 0;
   right: 0;
 
@@ -40,6 +42,10 @@
     margin-bottom: 15px;
   }
 
+  &__table-wrapper {
+    overflow-y: auto;
+  }
+
   &__table {
     width: 100%;
     border-spacing: 0;
@@ -61,5 +67,23 @@
     display: flex;
     justify-content: flex-end;
     margin-top: 15px;
+  }
+}
+
+@media (max-width: 720px) {
+  .cart-modal {
+    max-width: 460px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cart-modal {
+    max-width: 340px;
+    padding: 15px;
+
+    &__table-th,
+    &__table-td {
+      padding: 5px 10px;
+    }
   }
 }
