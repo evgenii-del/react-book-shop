@@ -29,7 +29,11 @@ const App = () => {
               token ? <Cart setIsOverlayOpen={setIsOverlayOpen} /> : <Redirect to="/login" />
             }
           />
-          <Route exact path="/login" render={() => <Login />} />
+          <Route
+            exact
+            path="/login"
+            render={() => (token ? <Redirect to="/catalog" /> : <Login />)}
+          />
           <Route exact path="*" render={() => <NotFound />} />
         </Switch>
       </Router>

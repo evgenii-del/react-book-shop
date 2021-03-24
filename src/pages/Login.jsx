@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 
 import { addUser } from '../redux/actions/user';
 
@@ -9,7 +8,6 @@ const MAX_LENGTH = 16;
 
 const Login = () => {
   const dispatch = useDispatch();
-  const history = useHistory();
   const [login, setLogin] = useState('');
   const [loginError, setLoginError] = useState(true);
 
@@ -22,7 +20,6 @@ const Login = () => {
 
   const handleLogin = () => {
     dispatch(addUser(login));
-    history.push('/catalog');
   };
 
   return (
