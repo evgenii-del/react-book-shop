@@ -1,11 +1,11 @@
-import cartReducer from './cart';
+import cartReducer from '../cart';
 import {
   ADD_BOOK_TO_CART,
   CLEAR_CART,
   DECREASE_COUNT_OF_BOOK,
   INCREASE_COUNT_OF_BOOK,
   REMOVE_BOOK_FROM_CART,
-} from '../actions/cart';
+} from '../../actions/cart';
 
 describe('cart reducer', () => {
   const booksItem = {

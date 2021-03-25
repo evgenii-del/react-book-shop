@@ -72,6 +72,13 @@
     },
     "transform": {
       "\\.[jt]sx?$": "babel-jest"
-    }
+    },
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
+    ],
+    "coveragePathIgnorePatterns": [
+      "index.js",
+      "store.js"
+    ]
   }
 }

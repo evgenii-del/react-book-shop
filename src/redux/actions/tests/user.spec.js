@@ -1,4 +1,4 @@
-import { logout, LOGOUT, SET_USER, setUser } from './user';
+import { logout, LOGOUT, SET_USER, setUser } from '../user';
 
 describe('should user actions work', () => {
   it('should create an action to set user', () => {
