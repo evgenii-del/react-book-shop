@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, useHistory, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
@@ -26,19 +26,21 @@ const Detail = () => {
     history.push('/cart');
   };
 
-  useEffect(() => {
+  const fetchData = useCallback(() => {
     axios
       .get(`https://js-band-store-api.glitch.me/books/${id}`, {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
       })
-      .then((response) => {
-        setBook(response.data);
-        setIsLoading(false);
-      })
-      .catch(() => {});
+      .then((response) => setBook(response.data))
+      .catch(() => {})
+      .finally(() => setIsLoading(false));
   }, []);
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
 
   return (
     <div className="container">

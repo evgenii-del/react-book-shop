@@ -19,7 +19,7 @@ const Cart = (props) => {
 
   const handleCloseModal = () => {
     setIsPopupOpen(false);
-    setIsOverlayOpen(false);
+    // setIsOverlayOpen(false);
     dispatch(clearCart());
   };
 
@@ -27,7 +27,7 @@ const Cart = (props) => {
     const books = JSON.stringify(cart.books);
     const headers = { Authorization: `Bearer ${user.token}` };
     setIsPopupOpen(true);
-    setIsOverlayOpen(true);
+    // setIsOverlayOpen(true);
     axios
       .post('https://js-band-store-api.glitch.me/purchase', { books }, { headers })
       .then(() => {})
