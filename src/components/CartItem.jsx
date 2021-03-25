@@ -36,7 +36,7 @@ const CartItem = (props) => {
         <img className="cart-item__image" src={item.book.cover} alt="image" />
       </Link>
       <div className="cart-item__content">
-        <p>{item.book.title}</p>
+        <p className="cart-item__title">{item.book.title}</p>
         <div className="cart-item__bottom">
           <div className="cart-item__quantity">
             <button

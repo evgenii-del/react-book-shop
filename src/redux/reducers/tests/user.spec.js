@@ -1,5 +1,5 @@
-import userReducer from './user';
-import { LOGOUT, SET_USER } from '../actions/user';
+import userReducer from '../user';
+import { LOGOUT, SET_USER } from '../../actions/user';
 
 describe('user reducer', () => {
   const userItem = {

@@ -1,5 +1,5 @@
-import catalogReducer from './catalog';
-import { GET_BOOKS_FAILURE, GET_BOOKS_STARTED, GET_BOOKS_SUCCESS } from '../actions/catalog';
+import catalogReducer from '../catalog';
+import { GET_BOOKS_FAILURE, GET_BOOKS_STARTED, GET_BOOKS_SUCCESS } from '../../actions/catalog';
 
 describe('catalog reducer', () => {
   const initialCart = {
