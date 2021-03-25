@@ -38,6 +38,10 @@
     margin-bottom: 20px;
   }
 
+  &__info-tags {
+    display: flex;
+  }
+
   &__info-tag {
     background-color: $black;
     color: $white;

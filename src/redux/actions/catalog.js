@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { logout } from './user';
 
 export const GET_BOOKS_STARTED = 'GET_BOOKS_STARTED';
 export const GET_BOOKS_SUCCESS = 'GET_BOOKS_SUCCESS';
@@ -27,5 +28,8 @@ export const getCalendarData = (token) => (dispatch) => {
       },
     })
     .then(({ data }) => dispatch(getBooksSuccess(data)))
-    .catch(({ message }) => dispatch(getBooksFailure(message)));
+    .catch(({ message }) => {
+      dispatch(getBooksFailure(message));
+      dispatch(logout());
+    });
 };
