@@ -4,11 +4,12 @@ import axios from 'axios';
 
 import { CartItem, Header } from '../components';
 import { clearCart } from '../redux/actions/cart';
-import emptyPng from '../assets/images/empty-cart.png';
 import CartModal from '../components/CartModal';
+import emptyPng from '../assets/images/empty-cart.png';
 
 const Cart = () => {
-  const { user, cart } = useSelector((state) => state);
+  const { books, totalCount, totalPrice } = useSelector((state) => state.cart);
+  const { token } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
@@ -20,18 +21,19 @@ const Cart = () => {
   const handleCloseModal = () => {
     setIsPopupOpen(false);
     setIsOverlayOpen(false);
-    dispatch(clearCart());
+    handleClearCart();
   };
 
   const handlePurchase = () => {
-    const books = JSON.stringify(cart.books);
-    const headers = { Authorization: `Bearer ${user.token}` };
-    setIsPopupOpen(true);
-    setIsOverlayOpen(true);
+    const booksArr = JSON.stringify(books);
+    const headers = { Authorization: `Bearer ${token}` };
     axios
-      .post('https://js-band-store-api.glitch.me/purchase', { books }, { headers })
-      .then(() => {})
-      .catch(() => {});
+      .post('https://js-band-store-api.glitch.me/purchase', { books: booksArr }, { headers })
+      .then(() => {
+        setIsPopupOpen(true);
+        setIsOverlayOpen(true);
+      })
+      .catch((error) => console.log(`Technical difficulties: ${error.message}`));
   };
 
   return (
@@ -39,15 +41,15 @@ const Cart = () => {
       <Header />
       <div className="cart">
         <h2 className="cart__title">Cart</h2>
-        {cart.totalCount ? (
+        {totalCount ? (
           <div className="cart__content">
             <div className="cart__list">
-              {cart.books.map((item) => (
+              {books.map((item) => (
                 <CartItem item={item} key={item.book.id} />
               ))}
             </div>
             <div className="cart__bottom">
-              <p>{`Total: ${cart.totalPrice.toFixed(2)}$`}</p>
+              <p>{`Total: ${totalPrice.toFixed(2)}$`}</p>
               <div className="cart__buttons">
                 <button className="cart__btn" type="button" onClick={handleClearCart}>
                   Clear cart

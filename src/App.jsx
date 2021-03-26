@@ -11,7 +11,6 @@ const App = () => (
         <PrivateRoute exact path="/catalog" component={Catalog} />
         <PrivateRoute exact path="/catalog/:id" component={Detail} />
         <PrivateRoute exact path="/cart" component={Cart} />
-        <PrivateRoute exact path="/catalog/:id" component={Detail} />
         <PrivateRoute exact path="/login" component={Login} isLogin />
         <Route exact path="*" component={NotFound} />
       </Switch>

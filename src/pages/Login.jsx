@@ -18,7 +18,7 @@ const Login = () => {
     setLogin(target.value);
   };
 
-  const handleLogin = () => {
+  const handleSubmitForm = () => {
     dispatch(addUser(login));
   };
 
@@ -30,7 +30,7 @@ const Login = () => {
         alt="img"
       />
       <h1 className="login__title">JS Band Store</h1>
-      <form className="login__form">
+      <form className="login__form" onSubmit={handleSubmitForm}>
         <label className="login__input-label" htmlFor="login">
           Name
           <input
@@ -42,7 +42,7 @@ const Login = () => {
             onChange={handleChangeLogin}
           />
         </label>
-        <button className="login__btn" type="button" disabled={loginError} onClick={handleLogin}>
+        <button className="login__btn" type="submit" disabled={loginError}>
           Continue
         </button>
       </form>

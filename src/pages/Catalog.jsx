@@ -5,7 +5,8 @@ import { Card, Header } from '../components';
 import { getCalendarData } from '../redux/actions/catalog';
 
 const Detail = () => {
-  const { user, books } = useSelector((state) => state);
+  const { isLoading, data } = useSelector((state) => state.books);
+  const { token } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
   const [search, setSearch] = useState('');
@@ -29,7 +30,7 @@ const Detail = () => {
   };
 
   useEffect(() => {
-    dispatch(getCalendarData(user.token));
+    dispatch(getCalendarData(token));
   }, []);
 
   return (
@@ -52,11 +53,11 @@ const Detail = () => {
       </nav>
       <div className="catalog">
         <h2 className="catalog__title">Catalog</h2>
-        {books.isLoading ? (
+        {isLoading ? (
           <span>loading...</span>
         ) : (
           <div className="catalog__content">
-            {books.data
+            {data
               .filter((book) => book.title.toLowerCase().includes(search.toLowerCase().trim()))
               .filter((book) => checkPrice(book))
               .map((book) => (

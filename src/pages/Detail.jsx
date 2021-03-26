@@ -7,11 +7,12 @@ import { Header } from '../components';
 import { addBookToCart } from '../redux/actions/cart';
 
 const Detail = () => {
-  const { cart, user } = useSelector((state) => state);
+  const { books } = useSelector((state) => state.cart);
+  const { token } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const history = useHistory();
   const { id } = useParams();
-  const isInCart = cart.books.find((item) => item.book.id === id);
+  const isInCart = books.find((item) => item.book.id === id);
 
   const [book, setBook] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -30,11 +31,11 @@ const Detail = () => {
     axios
       .get(`https://js-band-store-api.glitch.me/books/${id}`, {
         headers: {
-          Authorization: `Bearer ${user.token}`,
+          Authorization: `Bearer ${token}`,
         },
       })
       .then((response) => setBook(response.data))
-      .catch(() => {})
+      .catch((error) => console.log(`Technical difficulties: ${error.message}`))
       .finally(() => setIsLoading(false));
   }, []);
 
