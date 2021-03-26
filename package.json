@@ -2,6 +2,7 @@
   "name": "react-book-shop",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://evgenii-del.github.io/react-book-shop/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -23,7 +24,9 @@
     "eject": "react-scripts eject",
     "lint": "eslint src/**/*.{js,jsx}",
     "lint:fix": "eslint src/**/*.{js,jsx} --fix",
-    "prettier:write": "prettier --write src/**/*.{js,jsx}"
+    "prettier:write": "prettier --write src/**/*.{js,jsx}",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "husky": {
     "hooks": {
@@ -55,6 +58,7 @@
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-prettier": "^3.3.1",
+    "gh-pages": "^3.1.0",
     "husky": "^4.3.8",
     "lint-staged": "^10.5.4",
     "node-sass": "^5.0.0",

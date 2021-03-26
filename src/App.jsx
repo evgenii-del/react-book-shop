@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { Cart, Catalog, Detail, Login, NotFound } from './pages';
 import { PrivateRoute } from './components';
@@ -13,7 +13,7 @@ const App = () => (
         <PrivateRoute exact path="/cart" component={Cart} />
         <PrivateRoute exact path="/catalog/:id" component={Detail} />
         <PrivateRoute exact path="/login" component={Login} isLogin />
-        <Route exact path="*" render={() => <NotFound />} />
+        <Route exact path="*" component={NotFound} />
       </Switch>
     </Router>
   </div>
