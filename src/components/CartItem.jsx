@@ -11,9 +11,9 @@ import {
   removeBookFromCart,
 } from '../redux/actions/cart';
 
-const CartItem = (props) => {
+const CartItem = ({ item }) => {
   const dispatch = useDispatch();
-  const { item } = props;
+  const { book, totalCount, totalPrice } = item;
 
   const handleRemoveItem = () => {
     dispatch(removeBookFromCart(item.book.id));
@@ -32,34 +32,34 @@ const CartItem = (props) => {
       <button className="cart-item__btn" type="button" name="button" onClick={handleRemoveItem}>
         <img src={closeSvg} alt="close" aria-label="remove item from cart" />
       </button>
-      <Link to={`/catalog/${item.book.id}`} className="cart-item__link">
-        <img className="cart-item__image" src={item.book.cover} alt="image" />
+      <Link to={`/catalog/${book.id}`} className="cart-item__link">
+        <img className="cart-item__image" src={book.cover} alt="cart item" />
       </Link>
       <div className="cart-item__content">
-        <p className="cart-item__title">{item.book.title}</p>
+        <p className="cart-item__title">{book.title}</p>
         <div className="cart-item__bottom">
           <div className="cart-item__quantity">
             <button
               className="cart-item__add-btn"
               type="button"
               name="button"
-              disabled={item.book.count <= item.totalCount}
+              disabled={book.count <= totalCount}
               onClick={handleIncreaseBook}
             >
               <img src={addSvg} alt="increase item in cart" />
             </button>
-            <span className="cart-item__total-count">{item.totalCount}</span>
+            <span className="cart-item__total-count">{totalCount}</span>
             <button
               className="cart-item__minus-btn"
               type="button"
               name="button"
-              disabled={item.totalCount <= 1}
+              disabled={totalCount <= 1}
               onClick={handleDecreaseBook}
             >
               <img src={minusSvg} alt="decrease item in cart" />
             </button>
           </div>
-          <span className="cart-item__total-price">{`${item.totalPrice.toFixed(2)}$`}</span>
+          <span className="cart-item__total-price">{`${totalPrice.toFixed(2)}$`}</span>
         </div>
       </div>
     </div>

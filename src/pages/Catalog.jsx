@@ -7,31 +7,17 @@ import { getCalendarData } from '../redux/actions/catalog';
 const Detail = () => {
   const { user, books } = useSelector((state) => state);
   const dispatch = useDispatch();
-  const [search, setSearch] = useState('');
-  const [select, setSelect] = useState('');
 
-  // eslint-disable-next-line consistent-return
+  const [search, setSearch] = useState('');
+  const [select, setSelect] = useState('0');
+
   const checkPrice = (book) => {
     const { price } = book;
-    switch (select) {
-      case '1':
-        if (price < 25) {
-          return book;
-        }
-        break;
-      case '2':
-        if (price >= 25 && price <= 50) {
-          return book;
-        }
-        break;
-      case '3':
-        if (price > 50) {
-          return book;
-        }
-        break;
-      default:
-        return book;
-    }
+    if (select === '0') return book;
+    if (select === '1' && price < 25) return book;
+    if (select === '2' && price >= 25 && price <= 50) return book;
+    if (select === '3' && price > 50) return book;
+    return null;
   };
 
   const handleChangeSearch = ({ target }) => {
@@ -66,14 +52,18 @@ const Detail = () => {
       </nav>
       <div className="catalog">
         <h2 className="catalog__title">Catalog</h2>
-        <div className="catalog__content">
-          {books.data
-            .filter((book) => book.title.toLowerCase().includes(search.toLowerCase().trim()))
-            .filter((book) => checkPrice(book))
-            .map((book) => (
-              <Card book={book} key={book.id} />
-            ))}
-        </div>
+        {books.isLoading ? (
+          <span>loading...</span>
+        ) : (
+          <div className="catalog__content">
+            {books.data
+              .filter((book) => book.title.toLowerCase().includes(search.toLowerCase().trim()))
+              .filter((book) => checkPrice(book))
+              .map((book) => (
+                <Card book={book} key={book.id} />
+              ))}
+          </div>
+        )}
       </div>
     </div>
   );

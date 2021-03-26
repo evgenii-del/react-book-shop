@@ -3,9 +3,8 @@ import { useSelector } from 'react-redux';
 
 import closeSvg from '../assets/images/close.svg';
 
-const CartModal = (props) => {
-  const { cart } = useSelector((state) => state);
-  const { isPopupOpen, handleCloseModal } = props;
+const CartModal = ({ isPopupOpen, handleCloseModal }) => {
+  const { books, totalPrice } = useSelector((state) => state.cart);
 
   return (
     <div className={`cart-modal ${isPopupOpen ? 'cart-modal_active' : undefined}`}>
@@ -24,7 +23,7 @@ const CartModal = (props) => {
             </tr>
           </thead>
           <tbody>
-            {cart.books.map((item) => (
+            {books.map((item) => (
               <tr key={item.book.id}>
                 <td className="cart-modal__table-td">{item.book.title}</td>
                 <td className="cart-modal__table-td">{item.totalCount}</td>
@@ -35,7 +34,7 @@ const CartModal = (props) => {
           </tbody>
         </table>
       </div>
-      <div className="cart-modal__total-price">{`Total: ${cart.totalPrice.toFixed(2)}$`}</div>
+      <div className="cart-modal__total-price">{`Total: ${totalPrice.toFixed(2)}$`}</div>
     </div>
   );
 };

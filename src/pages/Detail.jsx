@@ -13,7 +13,7 @@ const Detail = () => {
   const { id } = useParams();
   const isInCart = cart.books.find((item) => item.book.id === id);
 
-  const [book, setBook] = useState();
+  const [book, setBook] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
   const handleAddBookToCart = () => {

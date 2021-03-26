@@ -33,15 +33,15 @@ const Login = () => {
       <form className="login__form">
         <label className="login__input-label" htmlFor="login">
           Name
+          <input
+            className="login__input"
+            type="text"
+            placeholder="Enter your name"
+            id="login"
+            value={login}
+            onChange={handleChangeLogin}
+          />
         </label>
-        <input
-          className="login__input"
-          type="text"
-          placeholder="Enter your name"
-          id="login"
-          value={login}
-          onChange={handleChangeLogin}
-        />
         <button className="login__btn" type="button" disabled={loginError} onClick={handleLogin}>
           Continue
         </button>

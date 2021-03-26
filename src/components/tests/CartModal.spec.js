@@ -7,27 +7,24 @@ import * as redux from 'react-redux';
 
 const spy = jest.spyOn(redux, 'useSelector');
 spy.mockReturnValue({
-  cart: {
-    books: [
-      {
-        book: {
-          id: '5',
-          title: 'Building A JavaScript Framework',
-          author: 'Alex Young',
-          level: 'Advanced',
-          description: 'best Of Let’s Make a Framework articles.',
-          cover: 'https://jsbooks.revolunet.com/img/cover_buildingjsframework.png',
-          tags: ['core'],
-          price: 45.74,
-          count: 11,
-        },
-        totalCount: 1,
-        totalPrice: 45.74,
+  books: [
+    {
+      book: {
+        id: '5',
+        title: 'Building A JavaScript Framework',
+        author: 'Alex Young',
+        level: 'Advanced',
+        description: 'best Of Let’s Make a Framework articles.',
+        cover: 'https://jsbooks.revolunet.com/img/cover_buildingjsframework.png',
+        tags: ['core'],
+        price: 45.74,
+        count: 11,
       },
-    ],
-    totalCount: 1,
-    totalPrice: 45.74,
-  },
+      totalCount: 1,
+      totalPrice: 45.74,
+    },
+  ],
+  totalPrice: 45.74,
 });
 
 describe('should render CartModal component', () => {
