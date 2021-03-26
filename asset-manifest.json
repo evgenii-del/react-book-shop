@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/js-band-store/static/css/main.6430bc5b.chunk.css",
-    "main.js": "/js-band-store/static/js/main.4ce44f57.chunk.js",
-    "main.js.map": "/js-band-store/static/js/main.4ce44f57.chunk.js.map",
-    "runtime-main.js": "/js-band-store/static/js/runtime-main.3276bd2e.js",
-    "runtime-main.js.map": "/js-band-store/static/js/runtime-main.3276bd2e.js.map",
-    "static/js/2.464d6de0.chunk.js": "/js-band-store/static/js/2.464d6de0.chunk.js",
-    "static/js/2.464d6de0.chunk.js.map": "/js-band-store/static/js/2.464d6de0.chunk.js.map",
-    "index.html": "/js-band-store/index.html",
-    "static/css/main.6430bc5b.chunk.css.map": "/js-band-store/static/css/main.6430bc5b.chunk.css.map",
-    "static/js/2.464d6de0.chunk.js.LICENSE.txt": "/js-band-store/static/js/2.464d6de0.chunk.js.LICENSE.txt",
-    "static/media/add.c6f2e133.svg": "/js-band-store/static/media/add.c6f2e133.svg",
-    "static/media/cart.80367712.png": "/js-band-store/static/media/cart.80367712.png",
-    "static/media/close.79bd8e40.svg": "/js-band-store/static/media/close.79bd8e40.svg",
-    "static/media/logout.0becdbc3.png": "/js-band-store/static/media/logout.0becdbc3.png",
-    "static/media/minus.088c3818.svg": "/js-band-store/static/media/minus.088c3818.svg"
+    "main.css": "/react-book-shop/static/css/main.9838cd7f.chunk.css",
+    "main.js": "/react-book-shop/static/js/main.d3abd126.chunk.js",
+    "main.js.map": "/react-book-shop/static/js/main.d3abd126.chunk.js.map",
+    "runtime-main.js": "/react-book-shop/static/js/runtime-main.253e6f5e.js",
+    "runtime-main.js.map": "/react-book-shop/static/js/runtime-main.253e6f5e.js.map",
+    "static/js/2.02b2e5a4.chunk.js": "/react-book-shop/static/js/2.02b2e5a4.chunk.js",
+    "static/js/2.02b2e5a4.chunk.js.map": "/react-book-shop/static/js/2.02b2e5a4.chunk.js.map",
+    "index.html": "/react-book-shop/index.html",
+    "static/css/main.9838cd7f.chunk.css.map": "/react-book-shop/static/css/main.9838cd7f.chunk.css.map",
+    "static/js/2.02b2e5a4.chunk.js.LICENSE.txt": "/react-book-shop/static/js/2.02b2e5a4.chunk.js.LICENSE.txt",
+    "static/media/add.c6f2e133.svg": "/react-book-shop/static/media/add.c6f2e133.svg",
+    "static/media/cart.80367712.png": "/react-book-shop/static/media/cart.80367712.png",
+    "static/media/close.79bd8e40.svg": "/react-book-shop/static/media/close.79bd8e40.svg",
+    "static/media/logout.0becdbc3.png": "/react-book-shop/static/media/logout.0becdbc3.png",
+    "static/media/minus.088c3818.svg": "/react-book-shop/static/media/minus.088c3818.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.3276bd2e.js",
-    "static/js/2.464d6de0.chunk.js",
-    "static/css/main.6430bc5b.chunk.css",
-    "static/js/main.4ce44f57.chunk.js"
+    "static/js/runtime-main.253e6f5e.js",
+    "static/js/2.02b2e5a4.chunk.js",
+    "static/css/main.9838cd7f.chunk.css",
+    "static/js/main.d3abd126.chunk.js"
   ]
 }
