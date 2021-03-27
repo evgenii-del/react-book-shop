@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import NotFound from '../NotFound';
+import NotFound from './NotFound';
 
 describe('should render Card component', () => {
   let component;

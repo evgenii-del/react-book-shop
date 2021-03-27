@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import CartModal from '../CartModal';
+import CartModal from './CartModal';
 
 import * as redux from 'react-redux';
 

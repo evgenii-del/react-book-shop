@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import * as redux from 'react-redux';
 
-import App from '../App';
+import App from './App';
 
 const useSelectorSpy = jest.spyOn(redux, 'useSelector');
 describe('should render App component', () => {

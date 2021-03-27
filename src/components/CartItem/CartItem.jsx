@@ -2,14 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-import closeSvg from '../assets/images/close.svg';
-import addSvg from '../assets/images/add.svg';
-import minusSvg from '../assets/images/minus.svg';
+import closeSvg from '../../assets/images/close.svg';
+import addSvg from '../../assets/images/add.svg';
+import minusSvg from '../../assets/images/minus.svg';
 import {
   decreaseCountOfBook,
   increaseCountOfBook,
   removeBookFromCart,
-} from '../redux/actions/cart';
+} from '../../redux/actions/cart';
 
 const CartItem = ({ item }) => {
   const dispatch = useDispatch();

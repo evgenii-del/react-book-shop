@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import * as redux from 'react-redux';
 
-import Detail from '../Detail';
+import Detail from './Detail';
 
 const useSelectorSpy = jest.spyOn(redux, 'useSelector');
 const useDispatchSpy = jest.spyOn(redux, 'useDispatch');

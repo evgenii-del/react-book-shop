@@ -3,8 +3,8 @@ import { useParams, useHistory, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 
-import { Header } from '../components';
-import { addBookToCart } from '../redux/actions/cart';
+import { Header, Loader } from '../../components';
+import { addBookToCart } from '../../redux/actions/cart';
 
 const Detail = () => {
   const { books } = useSelector((state) => state.cart);
@@ -49,7 +49,7 @@ const Detail = () => {
       <div className="detail">
         <h2 className="detail__title">Detail</h2>
         {isLoading ? (
-          <span>loading...</span>
+          <Loader />
         ) : (
           <div className="detail__content">
             <div className="detail__image-container">

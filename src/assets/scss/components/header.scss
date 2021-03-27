@@ -16,6 +16,10 @@
     }
   }
 
+  &__logo-mobile {
+    display: none;
+  }
+
   &__user {
     display: flex;
     align-items: center;
@@ -69,7 +73,11 @@
       margin-right: 15px;
     }
 
-    &__logo-element {
+    &__logo-mobile {
+      display: block;
+    }
+
+    &__logo-desktop {
       display: none;
     }
   }

@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
-import logoutPng from '../assets/images/logout.png';
-import cartPng from '../assets/images/cart.png';
-import { logout } from '../redux/actions/user';
+import logoutPng from '../../assets/images/logout.png';
+import cartPng from '../../assets/images/cart.png';
+import { logout } from '../../redux/actions/user';
 
 const Header = () => {
   const { username, avatar } = useSelector((state) => state.user);
@@ -17,8 +17,8 @@ const Header = () => {
   return (
     <header className="header">
       <Link to="/catalog" className="header__logo">
-        B<span className="header__logo-element">ook</span>S
-        <span className="header__logo-element">hop</span>
+        <span className="header__logo-desktop">BookShop</span>
+        <span className="header__logo-mobile">BS</span>
       </Link>
       <div className="header__info">
         <div className="header__exit" onClick={handleLogout} aria-hidden>

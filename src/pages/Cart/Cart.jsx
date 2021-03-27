@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 
-import { CartItem, Header } from '../components';
-import { clearCart } from '../redux/actions/cart';
-import CartModal from '../components/CartModal';
-import emptyPng from '../assets/images/empty-cart.png';
+import { CartItem, Header } from '../../components';
+import { clearCart } from '../../redux/actions/cart';
+import CartModal from '../../components/CartModal/CartModal';
+import emptyPng from '../../assets/images/empty-cart.png';
 
 const Cart = () => {
   const { books, totalCount, totalPrice } = useSelector((state) => state.cart);

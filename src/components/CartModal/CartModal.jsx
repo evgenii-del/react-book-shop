@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import closeSvg from '../assets/images/close.svg';
+import closeSvg from '../../assets/images/close.svg';
 
 const CartModal = ({ isPopupOpen, handleCloseModal }) => {
   const { books, totalPrice } = useSelector((state) => state.cart);

@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import * as redux from 'react-redux';
-import CartItem from '../CartItem';
+import CartItem from './CartItem';
 
 const useDispatchSpy = jest.spyOn(redux, 'useDispatch');
 describe('should render CartItem component', () => {

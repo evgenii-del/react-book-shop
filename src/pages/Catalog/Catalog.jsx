@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { Card, Header } from '../components';
-import { getCalendarData } from '../redux/actions/catalog';
+import { Card, Header, Loader } from '../../components';
+import { getCalendarData } from '../../redux/actions/catalog';
 
 const Detail = () => {
   const { isLoading, data } = useSelector((state) => state.books);
@@ -54,7 +54,7 @@ const Detail = () => {
       <div className="catalog">
         <h2 className="catalog__title">Catalog</h2>
         {isLoading ? (
-          <span>loading...</span>
+          <Loader />
         ) : (
           <div className="catalog__content">
             {data

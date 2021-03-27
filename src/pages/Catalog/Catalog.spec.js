@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import * as redux from 'react-redux';
 
-import Catalog from '../Catalog';
+import Catalog from './Catalog';
 
 const useSelectorSpy = jest.spyOn(redux, 'useSelector');
 const useDispatchSpy = jest.spyOn(redux, 'useDispatch');
