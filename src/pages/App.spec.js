@@ -13,7 +13,7 @@ describe('should render App component', () => {
     component = shallow(<App />);
   });
 
-  it('should contain .wrapper', () => {
+  it('should contain .wrapper wrapper', () => {
     const wrapper = component.find('.wrapper');
     expect(wrapper.length).toBe(1);
   });

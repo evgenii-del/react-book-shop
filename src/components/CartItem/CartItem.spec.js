@@ -1,9 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import * as redux from 'react-redux';
+
 import CartItem from './CartItem';
 
 const useDispatchSpy = jest.spyOn(redux, 'useDispatch');
+
 describe('should render CartItem component', () => {
   const item = {
     book: {
@@ -32,7 +34,7 @@ describe('should render CartItem component', () => {
     expect(wrapper.length).toBe(1);
   });
 
-  it('should contain .cart-item wrapper', () => {
+  it('should contain title from props', () => {
     const title = component.find('.cart-item__title').text();
     expect(title).toEqual(item.book.title);
   });

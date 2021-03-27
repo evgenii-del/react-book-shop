@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { addUser } from '../../redux/actions/user';
+import { addUser } from '../../redux/actions/user/user';
 
 const MIN_LENGTH = 4;
 const MAX_LENGTH = 16;

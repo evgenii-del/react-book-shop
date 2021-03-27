@@ -9,7 +9,7 @@ import {
   decreaseCountOfBook,
   increaseCountOfBook,
   removeBookFromCart,
-} from '../cart';
+} from './cart';
 
 describe('should cart actions work', () => {
   it('should create an action to add a book to cart', () => {

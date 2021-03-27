@@ -1,13 +1,13 @@
-import cartReducer from '../cart';
+import cartReducer from './cart';
 import {
   ADD_BOOK_TO_CART,
   CLEAR_CART,
   DECREASE_COUNT_OF_BOOK,
   INCREASE_COUNT_OF_BOOK,
   REMOVE_BOOK_FROM_CART,
-} from '../../actions/cart';
+} from '../../actions/cart/cart';
 
-describe('cart reducer', () => {
+describe('should cart reducers work', () => {
   const booksItem = {
     book: {
       id: '4',
@@ -80,18 +80,7 @@ describe('cart reducer', () => {
     ).toEqual({
       books: [
         {
-          book: {
-            id: '4',
-            title: 'Eloquent Javascript',
-            author: 'Marijn Haverbeke',
-            level: 'Beginner',
-            description:
-              'A book providing an introduction to the JavaScript language and programming in general.',
-            cover: 'https://jsbooks.revolunet.com/img/cover_eloquentjs.png',
-            tags: ['core'],
-            price: 20.1,
-            count: 10,
-          },
+          book: booksItem.book,
           totalCount: 2,
           totalPrice: 40.2,
         },
@@ -107,18 +96,7 @@ describe('cart reducer', () => {
         {
           books: [
             {
-              book: {
-                id: '4',
-                title: 'Eloquent Javascript',
-                author: 'Marijn Haverbeke',
-                level: 'Beginner',
-                description:
-                  'A book providing an introduction to the JavaScript language and programming in general.',
-                cover: 'https://jsbooks.revolunet.com/img/cover_eloquentjs.png',
-                tags: ['core'],
-                price: 20.1,
-                count: 10,
-              },
+              book: booksItem.book,
               totalCount: 2,
               totalPrice: 40.2,
             },

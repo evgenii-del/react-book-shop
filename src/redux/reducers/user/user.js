@@ -1,4 +1,4 @@
-import { LOGOUT, SET_USER } from '../actions/user';
+import { LOGOUT, SET_USER } from '../../actions/user/user';
 
 const initialState = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : {};
 

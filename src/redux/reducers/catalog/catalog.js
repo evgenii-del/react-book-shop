@@ -1,4 +1,8 @@
-import { GET_BOOKS_FAILURE, GET_BOOKS_STARTED, GET_BOOKS_SUCCESS } from '../actions/catalog';
+import {
+  GET_BOOKS_FAILURE,
+  GET_BOOKS_STARTED,
+  GET_BOOKS_SUCCESS,
+} from '../../actions/catalog/catalog';
 
 const initialState = {
   data: [],

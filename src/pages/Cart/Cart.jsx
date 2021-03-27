@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 
 import { CartItem, Header } from '../../components';
-import { clearCart } from '../../redux/actions/cart';
+import { clearCart } from '../../redux/actions/cart/cart';
 import CartModal from '../../components/CartModal/CartModal';
 import emptyPng from '../../assets/images/empty-cart.png';
 

@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Card, Header, Loader } from '../../components';
-import { getCalendarData } from '../../redux/actions/catalog';
+import { getCalendarData } from '../../redux/actions/catalog/catalog';
 
 const Detail = () => {
-  const { isLoading, data } = useSelector((state) => state.books);
+  const { isLoading, data } = useSelector((state) => state.catalog);
   const { token } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 

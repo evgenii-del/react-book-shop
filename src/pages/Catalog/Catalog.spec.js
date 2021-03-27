@@ -36,18 +36,6 @@ describe('should render Catalog component', () => {
           price: 38.91,
           count: 11,
         },
-        {
-          id: '3',
-          title: 'Javascript Enlightenment',
-          author: 'Cody Lindley',
-          level: 'Intermediate',
-          description:
-            'An accurate JavaScript worldview through an examination of native JavaScript objects and supporting nuances.',
-          cover: 'https://jsbooks.revolunet.com/img/cover_jsenlight.png',
-          tags: ['core'],
-          price: 59.14,
-          count: 5,
-        },
       ],
       isLoading: false,
       token: 'a7eb2vca1udkmkjy80k97p',

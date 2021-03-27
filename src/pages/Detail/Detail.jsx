@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 
 import { Header, Loader } from '../../components';
-import { addBookToCart } from '../../redux/actions/cart';
+import { addBookToCart } from '../../redux/actions/cart/cart';
 
 const Detail = () => {
   const { books } = useSelector((state) => state.cart);

@@ -40,7 +40,7 @@ describe('should render Detail component', () => {
     component = shallow(<Detail />);
   });
 
-  it('should contain .container wrapper', () => {
+  it('should contain .detail wrapper', () => {
     const wrapper = component.find('.detail');
     expect(wrapper.length).toBe(1);
   });

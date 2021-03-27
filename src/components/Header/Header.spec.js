@@ -6,6 +6,7 @@ import Header from './Header';
 
 const useSelectorSpy = jest.spyOn(redux, 'useSelector');
 const useDispatchSpy = jest.spyOn(redux, 'useDispatch');
+
 describe('should render Header component', () => {
   let component;
 

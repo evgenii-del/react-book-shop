@@ -1,7 +1,11 @@
-import catalogReducer from '../catalog';
-import { GET_BOOKS_FAILURE, GET_BOOKS_STARTED, GET_BOOKS_SUCCESS } from '../../actions/catalog';
+import catalogReducer from './catalog';
+import {
+  GET_BOOKS_FAILURE,
+  GET_BOOKS_STARTED,
+  GET_BOOKS_SUCCESS,
+} from '../../actions/catalog/catalog';
 
-describe('catalog reducer', () => {
+describe('should catalog reducers work', () => {
   const initialCart = {
     data: [],
     isLoading: false,
@@ -29,7 +33,7 @@ describe('catalog reducer', () => {
     expect(catalogReducer(undefined, {})).toEqual(initialCart);
   });
 
-  it('should change isLoading flag', () => {
+  it('should change isLoading value', () => {
     expect(
       catalogReducer(initialCart, {
         type: GET_BOOKS_STARTED,
@@ -54,7 +58,7 @@ describe('catalog reducer', () => {
     });
   });
 
-  it('should change error', () => {
+  it('should change error value', () => {
     expect(
       catalogReducer(initialCart, {
         type: GET_BOOKS_FAILURE,

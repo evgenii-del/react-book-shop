@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { logout } from './user';
+import { logout } from '../user/user';
 
 export const GET_BOOKS_STARTED = 'GET_BOOKS_STARTED';
 export const GET_BOOKS_SUCCESS = 'GET_BOOKS_SUCCESS';

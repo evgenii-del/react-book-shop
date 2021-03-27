@@ -9,7 +9,7 @@ import {
   decreaseCountOfBook,
   increaseCountOfBook,
   removeBookFromCart,
-} from '../../redux/actions/cart';
+} from '../../redux/actions/cart/cart';
 
 const CartItem = ({ item }) => {
   const dispatch = useDispatch();

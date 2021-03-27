@@ -4,7 +4,7 @@ import {
   DECREASE_COUNT_OF_BOOK,
   INCREASE_COUNT_OF_BOOK,
   REMOVE_BOOK_FROM_CART,
-} from '../actions/cart';
+} from '../../actions/cart/cart';
 
 const getTotalCount = (arr) => arr.reduce((sum, book) => book.totalCount + sum, 0);
 

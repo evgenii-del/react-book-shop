@@ -1,7 +1,7 @@
-import userReducer from '../user';
-import { LOGOUT, SET_USER } from '../../actions/user';
+import userReducer from './user';
+import { LOGOUT, SET_USER } from '../../actions/user/user';
 
-describe('user reducer', () => {
+describe('should user reducers work', () => {
   const userItem = {
     username: 'Evgenii',
     avatar: 'https://api.hello-avatar.com/adorables/100/asdasd.png',

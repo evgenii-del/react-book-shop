@@ -5,7 +5,7 @@ import {
   getBooksFailure,
   getBooksStarted,
   getBooksSuccess,
-} from '../catalog';
+} from './catalog';
 
 describe('should catalog actions work', () => {
   it('should create an action to start getting books data', () => {

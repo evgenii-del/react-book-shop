@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import logoutPng from '../../assets/images/logout.png';
 import cartPng from '../../assets/images/cart.png';
-import { logout } from '../../redux/actions/user';
+import { logout } from '../../redux/actions/user/user';
 
 const Header = () => {
   const { username, avatar } = useSelector((state) => state.user);

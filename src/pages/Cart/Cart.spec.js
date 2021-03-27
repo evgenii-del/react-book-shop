@@ -39,7 +39,7 @@ describe('should render Cart component', () => {
     component = shallow(<Cart />);
   });
 
-  it('should contain .cart', () => {
+  it('should contain .cart wrapper', () => {
     const wrapper = component.find('.cart');
     expect(wrapper.length).toBe(1);
   });

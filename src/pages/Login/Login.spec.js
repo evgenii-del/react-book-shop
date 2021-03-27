@@ -14,7 +14,7 @@ describe('should render Login component', () => {
     component = shallow(<Login />);
   });
 
-  it('should contain .container wrapper', () => {
+  it('should contain .login wrapper', () => {
     const wrapper = component.find('.login');
     expect(wrapper.length).toBe(1);
   });
