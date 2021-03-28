@@ -30,16 +30,14 @@ We have a large catalog and a user-friendly intuitive interface.
 ## Scenarios
 
 1. User goes to the JS Band store website;
-2. If User unauthorized System redirects the user to the Login page;
-3. User login with username, System return user token, redirects User to the Book catalog and store token in
-   LocalStorage and Application State;
-4. User see the list of books; Search by book name, filter list by the price;
-5. User navigate to the specific Book details clicking on book card;
-6. User choose the needed book, sees the price, and add the book to the cart. Then User can navigate back to the
-   catalog;
-7. User goes to the Cart, see order list and press 'Purchase' button;
-8. System place order, show a modal window with ordered items and successful message, and clear the cart;
-9. Then User sign out, System redirects the User to the Login screen.
+2. If User is unauthorized, the System redirects him to the Login page;
+3. User logins with username and the System returns user token, redirects User to the Book catalog and stores token in LocalStorage and Application State;
+4. User sees the list of books; Search by book name, filter list by the price;
+5. User navigates to the specific Book details clicking on book card;
+6. User chooses the needed book, sees the price, and adds the book to the cart. Then User can navigate back to the catalog or go the cart.
+7. User goes to the Cart, sees order list and can press 'Purchase' button;
+8. The System places order, shows a modal window with ordered items and successful message, and clears the cart in case of successful order.
+9. Then User signs out, the System redirects the User to the Login screen.
 
 ## Available Scripts
 
