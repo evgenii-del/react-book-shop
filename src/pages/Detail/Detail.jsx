@@ -34,8 +34,8 @@ const Detail = () => {
           Authorization: `Bearer ${token}`,
         },
       })
-      .then((response) => setBook(response.data))
-      .catch((error) => console.log(`Technical difficulties: ${error.message}`))
+      .then(({ data }) => setBook(data))
+      .catch(({ message }) => console.log(`Technical difficulties: ${message}`))
       .finally(() => setIsLoading(false));
   }, []);
 

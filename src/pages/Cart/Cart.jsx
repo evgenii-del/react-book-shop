@@ -34,7 +34,7 @@ const Cart = () => {
         setIsPopupOpen(true);
         setIsOverlayOpen(true);
       })
-      .catch((error) => console.log(`Technical difficulties: ${error.message}`));
+      .catch(({ message }) => console.log(`Technical difficulties: ${message}`));
   };
 
   return (

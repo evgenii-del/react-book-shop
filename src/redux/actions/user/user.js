@@ -11,11 +11,11 @@ export const setUser = (data) => ({
 export const addUser = (userName) => (dispatch) => {
   axios
     .post('https://js-band-store-api.glitch.me/signin', { username: userName })
-    .then((response) => {
-      localStorage.setItem('user', JSON.stringify(response.data));
-      dispatch(setUser(response.data));
+    .then(({ data }) => {
+      localStorage.setItem('user', JSON.stringify(data));
+      dispatch(setUser(data));
     })
-    .catch(() => {});
+    .catch(({ message }) => console.log(`Technical difficulties: ${message}`));
 };
 
 export const logout = () => {
