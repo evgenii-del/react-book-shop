@@ -1,0 +1,22 @@
+@import '../components/card';
+
+.catalog {
+  padding: 15px 60px;
+  background-color: #ffffff;
+
+  &__title {
+    margin-bottom: 15px;
+  }
+
+  &__content {
+    margin: 0 -13px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .catalog {
+    padding: 15px 20px;
+  }
+}
