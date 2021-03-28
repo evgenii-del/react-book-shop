@@ -18,7 +18,8 @@ const Login = () => {
     setLogin(target.value);
   };
 
-  const handleSubmitForm = () => {
+  const handleSubmitForm = (event) => {
+    event.preventDefault();
     dispatch(addUser(login));
   };
 

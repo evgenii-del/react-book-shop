@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 import { CartItem, Header } from '../../components';
@@ -40,7 +41,12 @@ const Cart = () => {
     <div className="container">
       <Header />
       <div className="cart">
-        <h2 className="cart__title">Cart</h2>
+        <div className="cart__header">
+          <h2 className="cart__title">Cart</h2>
+          <Link className="cart__btn" to="/catalog">
+            Back to catalog
+          </Link>
+        </div>
         {totalCount ? (
           <div className="cart__content">
             <div className="cart__list">

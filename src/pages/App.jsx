@@ -1,12 +1,12 @@
 import React from 'react';
-import { HashRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { Cart, Catalog, Detail, Login, NotFound } from './index';
 import { PrivateRoute } from '../components';
 
 const App = () => (
   <div className="wrapper">
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Switch>
         <PrivateRoute exact path="/catalog" component={Catalog} />
         <PrivateRoute exact path="/catalog/:id" component={Detail} />

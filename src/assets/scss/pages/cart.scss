@@ -9,6 +9,12 @@
     margin-bottom: 15px;
   }
 
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   &__list {
     margin: 0 -10px;
     display: flex;
